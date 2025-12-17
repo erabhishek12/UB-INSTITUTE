@@ -1,0 +1,1320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Courses - UB Institute & Training</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;1,600&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Boxicons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        /* =========================================
+           INTERNAL STYLES FOR SPECIFIC REQUESTS
+        ========================================= */
+
+        /* 1. Navbar Scroll Behavior & Colors */
+        .header {
+            background: linear-gradient(135deg, #F36B21 0%, #F9A825 100%); /* Orange Theme Default */
+            transition: all 0.3s ease;
+            box-shadow: none;
+        }
+        
+        /* Scrolled State: White Background */
+        .header.scrolled {
+            background: #ffffff !important;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+
+        /* Default Link Colors (White on Orange) */
+        .nav-link {
+            color: #ffffff !important;
+            font-weight: 500;
+        }
+
+        .logo-text .logo-name { color: #fff; }
+        .logo-text .logo-tagline { color: rgba(255,255,255,0.9); }
+        .hamburger-line { background: #fff; }
+
+        /* Scrolled Link Colors (Black on White) */
+        .header.scrolled .nav-link {
+            color: #333333 !important;
+        }
+        .header.scrolled .logo-text .logo-name { color: #F36B21; } /* Orange Logo text */
+        .header.scrolled .logo-text .logo-tagline { color: #666; }
+        .header.scrolled .hamburger-line { background: #333; }
+
+        /* Active Tab Logic */
+        .nav-link.active {
+            background: rgba(255,255,255,0.2);
+            border-radius: 5px;
+        }
+
+        /* Active Tab on White Background (Dark Blue) */
+        .header.scrolled .nav-link.active {
+            color: #0B3C5D !important; /* Dark Blue */
+            font-weight: 700;
+            background: rgba(11, 60, 93, 0.1);
+        }
+
+        /* 2. Course Card Enhancements */
+        .courses-page {
+            background-color: #f8f9fa;
+        }
+
+        .category-heading {
+            margin-top: 60px;
+            margin-bottom: 30px;
+            padding-left: 20px;
+            border-left: 6px solid #F36B21; /* Orange border */
+        }
+
+        .category-heading h2 {
+            color: #0B3C5D; /* Dark Blue */
+            font-weight: 800;
+            margin-bottom: 5px;
+        }
+
+        .course-card {
+            background: #fff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .course-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(243, 107, 33, 0.15); /* Orange shadow */
+            border-color: #F36B21;
+        }
+
+        /* Image Styling */
+        .course-thumb-wrapper {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .course-thumb {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .course-card:hover .course-thumb {
+            transform: scale(1.1);
+        }
+
+        .course-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #F36B21;
+            color: #fff;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            z-index: 2;
+        }
+
+        .course-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .course-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #1A1A1A;
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+        }
+
+        .course-duration {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: #f0f0f0;
+            padding: 5px 10px;
+            border-radius: 5px;
+            width: fit-content;
+        }
+
+        .course-duration i { color: #F36B21; }
+
+        .btn-enroll-card {
+            margin-top: auto;
+            width: 100%;
+            background: #0B3C5D; /* Dark Blue Button */
+            color: white;
+            padding: 12px;
+            border-radius: 8px;
+            border: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .btn-enroll-card:hover {
+            background: #F36B21; /* Hover to Orange */
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* 3. Enhanced Modal */
+        .enroll-modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+            backdrop-filter: blur(5px);
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .enroll-modal.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .modal-content {
+            background: #fff;
+            width: 90%;
+            max-width: 500px;
+            border-radius: 20px;
+            padding: 0;
+            position: relative;
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+
+        .enroll-modal.active .modal-content {
+            transform: scale(1);
+        }
+
+        .modal-header-banner {
+            background: linear-gradient(135deg, #F36B21 0%, #F9A825 100%);
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .modal-body {
+            padding: 30px;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: rgba(255,255,255,0.8);
+            transition: 0.2s;
+            z-index: 10;
+        }
+
+        .close-modal:hover { color: #fff; transform: rotate(90deg); }
+
+        /* 4. Floating Icons */
+        .floating-icons {
+            position: fixed;
+            bottom: 30px;
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .float-wa { right: 30px; }
+        .float-call { left: 30px; }
+
+        .icon-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            color: #fff;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            text-decoration: none;
+            position: fixed;
+            bottom: 30px;
+            border: 2px solid #fff;
+        }
+
+        .icon-btn:hover { transform: scale(1.1) translateY(-5px); }
+        .wa-btn { background: #25D366; right: 30px; }
+        .call-btn-float { background: #0B3C5D; left: 30px; }
+
+        /* Footer Specifics */
+        .footer { background: #111; color: #bbb; padding-top: 60px; }
+        .footer-title { color: #fff; font-weight: 700; margin-bottom: 20px; font-size: 1.2rem; }
+        .footer-links li { margin-bottom: 12px; }
+        .footer-links a { color: #bbb; transition: 0.3s; text-decoration: none; display: flex; align-items: center; gap: 5px; }
+        .footer-links a:hover { color: #F36B21; padding-left: 5px; }
+        .footer-bottom { background: #000; padding: 20px 0; margin-top: 50px; border-top: 1px solid #333; }
+        .social-icon-btn {
+            width: 40px; height: 40px; background: #333; color: #fff; display: inline-flex;
+            align-items: center; justify-content: center; border-radius: 5px; margin-right: 10px; transition: 0.3s;
+        }
+        .social-icon-btn:hover { background: #F36B21; }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- ============================================
+       HEADER & NAVIGATION
+    ============================================ -->
+    <header class="header" id="header">
+        <div class="nav container">
+            <!-- Logo -->
+            <a href="index.html" class="nav-logo">
+                <img src="image\logo-wb.png"" alt="UB Institute" class="logo-img">
+            </a>
+
+            <!-- Mobile Menu Toggle -->
+            <div class="nav-toggle" id="navToggle">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </div>
+
+            <!-- Nav Menu -->
+            <div class="nav-menu" id="navMenu">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+                    <li class="nav-item"><a href="services.html" class="nav-link">Our Services</a></li>
+                    <li class="nav-item"><a href="courses.html" class="nav-link active">All Courses</a></li>
+                    <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
+                    <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <!-- Enquire Button (Desktop) -->
+            <div class="nav-right">
+                <a href="support.html" class="btn btn-light d-none d-md-flex" style="color: #F36B21; font-weight: 700;">Enquire Now</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============================================
+       HERO SECTION
+    ============================================ -->
+    <section class="page-header section-padding-sm text-white position-relative" style="margin-top: 80px; background: linear-gradient(135deg, #F36B21 0%, #F9A825 100%); padding: 80px 0;">
+        <div class="container text-center">
+            <h1 class="page-title mb-sm" style="font-size: 3rem; font-weight: 800;">Our Expert Courses</h1>
+            <p class="mb-0 opacity-90 fs-lg">100+ Job-Oriented Courses with 100% Placement Assistance</p>
+        </div>
+    </section>
+
+    <!-- ============================================
+       COURSES LIST START
+    ============================================ -->
+    <section class="section-padding courses-page">
+        <div class="container">
+
+            <!-- CATEGORY 1: COMPUTER & SOFTWARE -->
+            <div class="category-heading">
+                <h2>Computer & Software Engineering</h2>
+                <p class="text-muted">Master the digital world with our tech courses.</p>
+            </div>
+            <div class="courses-grid d-grid" style="grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 30px;">
+                
+                <!-- BCC -->
+                <div class="course-card">
+                    <div class="course-thumb-wrapper">
+                        <img src="https://images.unsplash.com/photo-1531297420497-0b869597a0e6?q=80&w=600&auto=format&fit=crop" class="course-thumb" alt="Basic Computer">
+                        <span class="course-badge">Foundation</span>
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">Basic Computer Course (BCC)</h3>
+                        <div class="course-duration"><i class='bx bx-time-five'></i> 6 Months</div>
+                        <button class="btn-enroll-card" onclick="openEnrollModal('Basic Computer Course')">Enroll Now</button>
+                    </div>
+                </div>
+
+                <!-- CCC -->
+                <div class="course-card">
+                    <div class="course-thumb-wrapper">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=600&auto=format&fit=crop" class="course-thumb" alt="CCC">
+                        <span class="course-badge">Govt. Certified</span>
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">Course on Computer Concepts (CCC)</h3>
+                        <div class="course-duration"><i class='bx bx-time-five'></i> 6 Months</div>
+                        <button class="btn-enroll-card" onclick="openEnrollModal('Course on Computer Concepts')">Enroll Now</button>
+                    </div>
+                </div>
+
+                <!-- DCA -->
+                <div class="course-card">
+                    <div class="course-thumb-wrapper">
+                        <img src="https://images.unsplash.com/photo-1496171367470-9ed9a91ea931?q=80&w=600&auto=format&fit=crop" class="course-thumb" alt="DCA">
+                        <span class="course-badge">Best Seller</span>
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">Diploma in Computer Application (DCA)</h3>
+                        <div class="course-duration"><i class='bx bx-time-five'></i> 6 Months</div>
+                        <button class="btn-enroll-card" onclick="openEnrollModal('Diploma in Computer Application')">Enroll Now</button>
+                    </div>
+                </div>
+
+                <!-- DCA + Tally -->
+                <div class="course-card">
+                    <div class="course-thumb-wrapper">
+                        <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=600&auto=format&fit=crop" class="course-thumb" alt="DCA Tally">
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">DCA with Tally (Accounting)</h3>
+                        <div class="course-duration"><i class='bx bx-time-five'></i> 9 Months</div>
+                        <button class="btn-enroll-card" onclick="openEnrollModal('DCA with Tally')">Enroll Now</button>
+                    </div>
+                </div>
+
+                <!-- ADCA -->
+                <div class="course-card">
+                    <div class="course-thumb-wrapper">
+                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=600&auto=format&fit=crop" class="course-thumb" alt="ADCA">
+                        <span class="course-badge">Advanced</span>
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">Advance Diploma in Computer App (ADCA)</h3>
+                        <div class="course-duration"><i class='bx bx-time-five'></i> 12 Months</div>
+                        <button class="btn-enroll-card" onclick="openEnrollModal('ADCA')">Enroll Now</button>
+                    </div>
+                </div>
+
+                <!-- Web Designing -->
+                <div class="course-card">
+                    <div class="course-thumb-wrapper">
+                        <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?q=80&w=600&auto=format&fit=crop" class="course-thumb" alt="Web Design">
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">Certificate in Web Designing</h3>
+                        <div class="course-duration"><i class='bx bx-time-five'></i> 6 Months</div>
+                        <button class="btn-enroll-card" onclick="openEnrollModal('Web Designing')">Enroll Now</button>
+                    </div>
+                </div>
+
+                <!-- Software Engineering -->
+                <div class="course-card">
+                    <div class="course-thumb-wrapper">
+                        <img src="https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?q=80&w=600&auto=format&fit=crop" class="course-thumb" alt="Software Eng">
+                        <span class="course-badge">Career</span>
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">Diploma in Software Engineering</h3>
+                        <div class="course-duration"><i class='bx bx-time-five'></i> 12 Months</div>
+                        <button class="btn-enroll-card" onclick="openEnrollModal('Software Engineering')">Enroll Now</button>
+                    </div>
+                </div>
+
+                <!-- C/C++ -->
+                <div class="course-card">
+                    <div class="course-thumb-wrapper">
+                        <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=600&auto=format&fit=crop" class="course-thumb" alt="Programming">
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">Introduction to C/C++ Programming</h3>
+                        <div class="course-duration"><i class='bx bx-time-five'></i> 3 Months</div>
+                        <button class="btn-enroll-card" onclick="openEnrollModal('C/C++ Programming')">Enroll Now</button>
+                    </div>
+                </div>
+
+                <!-- Java -->
+                <div class="course-card">
+                    <div class="course-thumb-wrapper">
+                        <img src="https://images.unsplash.com/photo-1534972195531-d756b9bfa9f2?q=80&w=600&auto=format&fit=crop" class="course-thumb" alt="Java">
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">Java Programming</h3>
+                        <div class="course-duration"><i class='bx bx-time-five'></i> 3 Months</div>
+                        <button class="btn-enroll-card" onclick="openEnrollModal('Java Programming')">Enroll Now</button>
+                    </div>
+                </div>
+
+                <!-- Python -->
+                <div class="course-card">
+                    <div class="course-thumb-wrapper">
+                        <img src="https://images.unsplash.com/photo-1526379095098-d400fd0bf935?q=80&w=600&auto=format&fit=crop" class="course-thumb" alt="Python">
+                        <span class="course-badge">Trending</span>
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">Python Programming</h3>
+                        <div class="course-duration"><i class='bx bx-time-five'></i> 3 Months</div>
+                        <button class="btn-enroll-card" onclick="openEnrollModal('Python Programming')">Enroll Now</button>
+                    </div>
+                </div>
+
+                <!-- Typing -->
+                <div class="course-card">
+                    <div class="course-thumb-wrapper">
+                        <img src="https://images.unsplash.com/photo-1587829741301-dc798b91add1?q=80&w=600&auto=format&fit=crop" class="course-thumb" alt="Typing">
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">Diploma in Typing (Eng/Hindi)</h3>
+                        <div class="course-duration"><i class='bx bx-time-five'></i> 3-6 Months</div>
+                        <button class="btn-enroll-card" onclick="openEnrollModal('Typing Course')">Enroll Now</button>
+                    </div>
+                </div>
+
+                 <!-- DTP -->
+                 <div class="course-card">
+                    <div class="course-thumb-wrapper">
+                        <img src="https://images.unsplash.com/photo-1626785774573-4b799312c95d?q=80&w=600&auto=format&fit=crop" class="course-thumb" alt="DTP">
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">Desktop Publishing (DTP)</h3>
+                        <div class="course-duration"><i class='bx bx-time-five'></i> 6 Months</div>
+                        <button class="btn-enroll-card" onclick="openEnrollModal('Desktop Publishing')">Enroll Now</button>
+                    </div>
+                </div>
+
+                <!-- Data Entry -->
+                 <div class="course-card">
+                    <div class="course-thumb-wrapper">
+                        <img src="https://images.unsplash.com/photo-1593642532744-d377ab507dc8?q=80&w=600&auto=format&fit=crop" class="course-thumb" alt="Data Entry">
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">Certificate in Data Entry Operator</h3>
+                        <div class="course-duration"><i class='bx bx-time-five'></i> 6 Months</div>
+                        <button class="btn-enroll-card" onclick="openEnrollModal('Data Entry Operator')">Enroll Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CATEGORY 2: TEACHER TRAINING -->
+            <div class="category-heading">
+                <h2>Teacher Training & Education</h2>
+                <p class="text-muted">Shape the future generation with our training.</p>
+            </div>
+            <div class="courses-grid d-grid" style="grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 30px;">
+                
+                <!-- NTT -->
+                <div class="course-card">
+                    <div class="course-thumb-wrapper">
+                        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=600&auto=format&fit=crop" class="course-thumb" alt="NTT">
+                        <span class="course-badge">Teaching</span>
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">Nursery Teacher Training (NTT)</h3>
+                        <div class="course-duration"><i class='bx bx-time-five'></i> 1-2 Years</div>
+                        <button class="btn-enroll-card" onclick="openEnrollModal('Nursery Teacher Training')">Enroll Now</button>
+                    </div>
+                </div>
+
+                <!-- PTT -->
+                <div class="course-card">
+                    <div class="course-thumb-wrapper">
+                        <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?q=80&w=600&auto=format&fit=crop" class="course-thumb" alt="PTT">
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">Primary Teacher Training (PTT)</h3>
+                        <div class="course-duration"><i class='bx bx-time-five'></i> 2 Years</div>
+                        <button class="btn-enroll-card" onclick="openEnrollModal('Primary Teacher Training')">Enroll Now</button>
+                    </div>
+                </div>
+
+                <!-- Early Childhood -->
+                <div class="course-card">
+                    <div class="course-thumb-wrapper">
+                        <img src="https://images.unsplash.com/photo-1587654780291-39c9404d746b?q=80&w=600&auto=format&fit=crop" class="course-thumb" alt="Early Childhood">
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">Early Childhood Care & Education</h3>
+                        <div class="course-duration"><i class='bx bx-time-five'></i> 1 Year</div>
+                        <button class="btn-enroll-card" onclick="openEnrollModal('Early Childhood Care')">Enroll Now</button>
+                    </div>
+                </div>
+
+                <!-- Computer Teacher -->
+                <div class="course-card">
+                    <div class="course-thumb-wrapper">
+                        <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=600&auto=format&fit=crop" class="course-thumb" alt="Computer Teacher">
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">Diploma in Computer Teacher Training</h3>
+                        <div class="course-duration"><i class='bx bx-time-five'></i> 18 Months</div>
+                        <button class="btn-enroll-card" onclick="openEnrollModal('Computer Teacher Training')">Enroll Now</button>
+                    </div>
+                </div>
+
+                 <!-- Yoga -->
+                 <div class="course-card">
+                    <div class="course-thumb-wrapper">
+                        <img src="https://images.unsplash.com/photo-1599447421405-0e32096b3033?q=80&w=600&auto=format&fit=crop" class="course-thumb" alt="Yoga">
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">Yoga Teacher / Instructor</h3>
+                        <div class="course-duration"><i class='bx bx-time-five'></i> 6-12 Months</div>
+                        <button class="btn-enroll-card" onclick="openEnrollModal('Yoga Instructor')">Enroll Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CATEGORY 3: FASHION & BEAUTY -->
+            <div class="category-heading">
+                <h2>Fashion & Beauty</h2>
+                <p class="text-muted">Creative skills for the fashion industry.</p>
+            </div>
+            <div class="courses-grid d-grid" style="grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 30px;">
+                
+                <!-- Fashion Design -->
+                <div class="course-card">
+                    <div class="course-thumb-wrapper">
+                        <img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?q=80&w=600&auto=format&fit=crop" class="course-thumb" alt="Fashion">
+                        <span class="course-badge">Creative</span>
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">Professional Diploma in Fashion Designing</h3>
+                        <div class="course-duration"><i class='bx bx-time-five'></i> 1 Year</div>
+                        <button class="btn-enroll-card" onclick="openEnrollModal('Fashion Designing')">Enroll Now</button>
+                    </div>
+                </div>
+
+                <!-- Beautician -->
+                <div class="course-card">
+                    <div class="course-thumb-wrapper">
+                        <img src="https://images.unsplash.com/photo-1560750588-73207b1ef5b8?q=80&w=600&auto=format&fit=crop" class="course-thumb" alt="Beautician">
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">Diploma in Beautician & Makeup</h3>
+                        <div class="course-duration"><i class='bx bx-time-five'></i> 6-12 Months</div>
+                        <button class="btn-enroll-card" onclick="openEnrollModal('Beautician Course')">Enroll Now</button>
+                    </div>
+                </div>
+
+                <!-- Hair Stylist -->
+                <div class="course-card">
+                    <div class="course-thumb-wrapper">
+                        <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?q=80&w=600&auto=format&fit=crop" class="course-thumb" alt="Hair">
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">Assistant Hair Stylist</h3>
+                        <div class="course-duration"><i class='bx bx-time-five'></i> 6 Months</div>
+                        <button class="btn-enroll-card" onclick="openEnrollModal('Hair Stylist')">Enroll Now</button>
+                    </div>
+                </div>
+            </div>
+            <!-- CATEGORY 4: AGRICULTURE & FARMING -->
+            <div class="category-heading">
+                <h2>Agriculture & Farming</h2>
+                <p class="text-muted">Modern agricultural techniques for sustainable growth.</p>
+            </div>
+            <div class="courses-grid d-grid" style="grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 30px;">
+                
+                <!-- Floriculturist -->
+                <div class="course-card">
+                    <div class="course-thumb-wrapper">
+                        <img src="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?q=80&w=600&auto=format&fit=crop" class="course-thumb" alt="Floriculture">
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">Certificate in Floriculturist (Open/Protected)</h3>
+                        <div class="course-duration"><i class='bx bx-time-five'></i> 6 Months</div>
+                        <button class="btn-enroll-card" onclick="openEnrollModal('Floriculturist')">Enroll Now</button>
+                    </div>
+                </div>
+
+                <!-- Gardener -->
+                <div class="course-card">
+                    <div class="course-thumb-wrapper">
+                        <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?q=80&w=600&auto=format&fit=crop" class="course-thumb" alt="Gardener">
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">Certificate In Gardener</h3>
+                        <div class="course-duration"><i class='bx bx-time-five'></i> 3 Months</div>
+                        <button class="btn-enroll-card" onclick="openEnrollModal('Gardener')">Enroll Now</button>
+                    </div>
+                </div>
+
+                <!-- Greenhouse -->
+                <div class="course-card">
+                    <div class="course-thumb-wrapper">
+                        <img src="https://images.unsplash.com/photo-1585421514284-efb74c2b69ba?q=80&w=600&auto=format&fit=crop" class="course-thumb" alt="Greenhouse">
+                        <span class="course-badge">Technical</span>
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">Certificate in Greenhouse Fitter</h3>
+                        <div class="course-duration"><i class='bx bx-time-five'></i> 6 Months</div>
+                        <button class="btn-enroll-card" onclick="openEnrollModal('Greenhouse Fitter')">Enroll Now</button>
+                    </div>
+                </div>
+
+                <!-- Mushroom -->
+                <div class="course-card">
+                    <div class="course-thumb-wrapper">
+                        <img src="https://images.unsplash.com/photo-1596733221358-132d73392437?q=80&w=600&auto=format&fit=crop" class="course-thumb" alt="Mushroom">
+                        <span class="course-badge">High Demand</span>
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">Certificate in Mushroom Cultivation</h3>
+                        <div class="course-duration"><i class='bx bx-time-five'></i> 6 Months</div>
+                        <button class="btn-enroll-card" onclick="openEnrollModal('Mushroom Cultivation')">Enroll Now</button>
+                    </div>
+                </div>
+
+                <!-- Organic Grower -->
+                <div class="course-card">
+                    <div class="course-thumb-wrapper">
+                        <img src="https://images.unsplash.com/photo-1615811361269-669246087f8f?q=80&w=600&auto=format&fit=crop" class="course-thumb" alt="Organic">
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">Certificate in Organic Grower</h3>
+                        <div class="course-duration"><i class='bx bx-time-five'></i> 4 Months</div>
+                        <button class="btn-enroll-card" onclick="openEnrollModal('Organic Grower')">Enroll Now</button>
+                    </div>
+                </div>
+
+                <!-- Micro Irrigation -->
+                <div class="course-card">
+                    <div class="course-thumb-wrapper">
+                        <img src="https://images.unsplash.com/photo-1563514227147-6d2ff665a6a0?q=80&w=600&auto=format&fit=crop" class="course-thumb" alt="Irrigation">
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">Diploma in Micro Irrigation Technician</h3>
+                        <div class="course-duration"><i class='bx bx-time-five'></i> 6 Months</div>
+                        <button class="btn-enroll-card" onclick="openEnrollModal('Micro Irrigation')">Enroll Now</button>
+                    </div>
+                </div>
+
+                <!-- Vermicompost -->
+                <div class="course-card">
+                    <div class="course-thumb-wrapper">
+                        <img src="https://images.unsplash.com/photo-1605000797499-95a51c5269ae?q=80&w=600&auto=format&fit=crop" class="course-thumb" alt="Soil">
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">Certificate In Vermicompost Producer</h3>
+                        <div class="course-duration"><i class='bx bx-time-five'></i> 6 Months</div>
+                        <button class="btn-enroll-card" onclick="openEnrollModal('Vermicompost Producer')">Enroll Now</button>
+                    </div>
+                </div>
+
+                <!-- Seed Processing -->
+                <div class="course-card">
+                    <div class="course-thumb-wrapper">
+                        <img src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?q=80&w=600&auto=format&fit=crop" class="course-thumb" alt="Seeds">
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">Seed Processing & Analysis</h3>
+                        <div class="course-duration"><i class='bx bx-time-five'></i> 3-6 Months</div>
+                        <button class="btn-enroll-card" onclick="openEnrollModal('Seed Processing')">Enroll Now</button>
+                    </div>
+                </div>
+
+                <!-- Mango Grower -->
+                <div class="course-card">
+                    <div class="course-thumb-wrapper">
+                        <img src="https://images.unsplash.com/photo-1553279768-865429fa0078?q=80&w=600&auto=format&fit=crop" class="course-thumb" alt="Mango">
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">Certificate in Mango Grower</h3>
+                        <div class="course-duration"><i class='bx bx-time-five'></i> 6 Months</div>
+                        <button class="btn-enroll-card" onclick="openEnrollModal('Mango Grower')">Enroll Now</button>
+                    </div>
+                </div>
+
+                <!-- Tractor Mechanic -->
+                <div class="course-card">
+                    <div class="course-thumb-wrapper">
+                        <img src="https://images.unsplash.com/photo-1595111956321-72f9602e1c94?q=80&w=600&auto=format&fit=crop" class="course-thumb" alt="Tractor">
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">Diploma in Mechanic Tractor</h3>
+                        <div class="course-duration"><i class='bx bx-time-five'></i> 6 Months</div>
+                        <button class="btn-enroll-card" onclick="openEnrollModal('Mechanic Tractor')">Enroll Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CATEGORY 5: PARAMEDICAL & HEALTH -->
+            <div class="category-heading">
+                <h2>Paramedical & Health Sciences</h2>
+                <p class="text-muted">Join the healthcare sector with specialized training.</p>
+            </div>
+            <div class="courses-grid d-grid" style="grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 30px;">
+                
+                <!-- CMS & ED -->
+                <div class="course-card">
+                    <div class="course-thumb-wrapper">
+                        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=600&auto=format&fit=crop" class="course-thumb" alt="Doctor">
+                        <span class="course-badge">Diploma</span>
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">Diploma in Community Medical Services & ED</h3>
+                        <div class="course-duration"><i class='bx bx-time-five'></i> 2 Years</div>
+                        <button class="btn-enroll-card" onclick="openEnrollModal('CMS & ED')">Enroll Now</button>
+                    </div>
+                </div>
+
+                <!-- EMT -->
+                <div class="course-card">
+                    <div class="course-thumb-wrapper">
+                        <img src="https://images.unsplash.com/photo-1516574187841-693018f33663?q=80&w=600&auto=format&fit=crop" class="course-thumb" alt="Ambulance">
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">Emergency Medical Technician (EMT)</h3>
+                        <div class="course-duration"><i class='bx bx-time-five'></i> 6 Months</div>
+                        <button class="btn-enroll-card" onclick="openEnrollModal('EMT Course')">Enroll Now</button>
+                    </div>
+                </div>
+
+                <!-- GDA -->
+                <div class="course-card">
+                    <div class="course-thumb-wrapper">
+                        <img src="https://images.unsplash.com/photo-1584515933487-779824d29609?q=80&w=600&auto=format&fit=crop" class="course-thumb" alt="Nursing">
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">General Duty Assistant (GDA)</h3>
+                        <div class="course-duration"><i class='bx bx-time-five'></i> 6 Months</div>
+                        <button class="btn-enroll-card" onclick="openEnrollModal('GDA Nursing')">Enroll Now</button>
+                    </div>
+                </div>
+
+                <!-- Hospital Mgmt -->
+                <div class="course-card">
+                    <div class="course-thumb-wrapper">
+                        <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=600&auto=format&fit=crop" class="course-thumb" alt="Hospital">
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">Certificate in Hospital Management</h3>
+                        <div class="course-duration"><i class='bx bx-time-five'></i> 1 Year</div>
+                        <button class="btn-enroll-card" onclick="openEnrollModal('Hospital Management')">Enroll Now</button>
+                    </div>
+                </div>
+
+                <!-- Pharmacy Assistant -->
+                <div class="course-card">
+                    <div class="course-thumb-wrapper">
+                        <img src="https://images.unsplash.com/photo-1585435557343-3b092031a831?q=80&w=600&auto=format&fit=crop" class="course-thumb" alt="Pharmacy">
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">Certificate in Pharmacy Assistant</h3>
+                        <div class="course-duration"><i class='bx bx-time-five'></i> 6 Months</div>
+                        <button class="btn-enroll-card" onclick="openEnrollModal('Pharmacy Assistant')">Enroll Now</button>
+                    </div>
+                </div>
+
+                <!-- Sanitary Inspector -->
+                <div class="course-card">
+                    <div class="course-thumb-wrapper">
+                        <img src="https://images.unsplash.com/photo-1584362917165-526a968579e8?q=80&w=600&auto=format&fit=crop" class="course-thumb" alt="Lab">
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">Diploma in Health Sanitary Inspector</h3>
+                        <div class="course-duration"><i class='bx bx-time-five'></i> 12 Months</div>
+                        <button class="btn-enroll-card" onclick="openEnrollModal('Sanitary Inspector')">Enroll Now</button>
+                    </div>
+                </div>
+
+                <!-- Operation Theatre -->
+                <div class="course-card">
+                    <div class="course-thumb-wrapper">
+                        <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?q=80&w=600&auto=format&fit=crop" class="course-thumb" alt="Operation Theatre">
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">Operation Theatre Technician</h3>
+                        <div class="course-duration"><i class='bx bx-time-five'></i> 1 Year</div>
+                        <button class="btn-enroll-card" onclick="openEnrollModal('OT Technician')">Enroll Now</button>
+                    </div>
+                </div>
+
+                <!-- First Aid -->
+                <div class="course-card">
+                    <div class="course-thumb-wrapper">
+                        <img src="https://images.unsplash.com/photo-1579165466741-7f35e4755652?q=80&w=600&auto=format&fit=crop" class="course-thumb" alt="First Aid">
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">Certificate in First AID</h3>
+                        <div class="course-duration"><i class='bx bx-time-five'></i> 6 Months</div>
+                        <button class="btn-enroll-card" onclick="openEnrollModal('First Aid')">Enroll Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CATEGORY 6: ITI & INDUSTRIAL -->
+            <div class="category-heading">
+                <h2>ITI & Industrial Safety</h2>
+                <p class="text-muted">Technical training for industrial roles.</p>
+            </div>
+            <div class="courses-grid d-grid" style="grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 30px;">
+                
+                <!-- Electrician -->
+                <div class="course-card">
+                    <div class="course-thumb-wrapper">
+                        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=600&auto=format&fit=crop" class="course-thumb" alt="Electrician">
+                        <span class="course-badge">ITI</span>
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">ITI in Electrician</h3>
+                        <div class="course-duration"><i class='bx bx-time-five'></i> 2 Years</div>
+                        <button class="btn-enroll-card" onclick="openEnrollModal('Electrician ITI')">Enroll Now</button>
+                    </div>
+                </div>
+
+                <!-- Fitter -->
+                <div class="course-card">
+                    <div class="course-thumb-wrapper">
+                        <img src="https://images.unsplash.com/photo-1581092921461-eab62e97a782?q=80&w=600&auto=format&fit=crop" class="course-thumb" alt="Fitter">
+                        <span class="course-badge">ITI</span>
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">ITI in Fitter</h3>
+                        <div class="course-duration"><i class='bx bx-time-five'></i> 2 Years</div>
+                        <button class="btn-enroll-card" onclick="openEnrollModal('Fitter ITI')">Enroll Now</button>
+                    </div>
+                </div>
+
+                <!-- Fire & Safety -->
+                <div class="course-card">
+                    <div class="course-thumb-wrapper">
+                        <img src="https://images.unsplash.com/photo-1599839575945-a9e5af0c3fa5?q=80&w=600&auto=format&fit=crop" class="course-thumb" alt="Fire Safety">
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">Diploma in Fire & Safety</h3>
+                        <div class="course-duration"><i class='bx bx-time-five'></i> 6-12 Months</div>
+                        <button class="btn-enroll-card" onclick="openEnrollModal('Fire Safety Diploma')">Enroll Now</button>
+                    </div>
+                </div>
+
+                <!-- Mechanic RAC -->
+                <div class="course-card">
+                    <div class="course-thumb-wrapper">
+                        <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?q=80&w=600&auto=format&fit=crop" class="course-thumb" alt="AC Repair">
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">ITI in Mechanic (Refrigeration & AC)</h3>
+                        <div class="course-duration"><i class='bx bx-time-five'></i> 2 Years</div>
+                        <button class="btn-enroll-card" onclick="openEnrollModal('Mechanic RAC')">Enroll Now</button>
+                    </div>
+                </div>
+
+                <!-- Civil Draughtsman -->
+                <div class="course-card">
+                    <div class="course-thumb-wrapper">
+                        <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=600&auto=format&fit=crop" class="course-thumb" alt="Architect">
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">ITI in Draughtsman (Civil)</h3>
+                        <div class="course-duration"><i class='bx bx-time-five'></i> 2 Years</div>
+                        <button class="btn-enroll-card" onclick="openEnrollModal('Draughtsman Civil')">Enroll Now</button>
+                    </div>
+                </div>
+
+                <!-- Foundryman -->
+                <div class="course-card">
+                    <div class="course-thumb-wrapper">
+                        <img src="https://images.unsplash.com/photo-1565193566173-092e7e1a949e?q=80&w=600&auto=format&fit=crop" class="course-thumb" alt="Welding">
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">ITI in Foundryman Technician</h3>
+                        <div class="course-duration"><i class='bx bx-time-five'></i> 2 Years</div>
+                        <button class="btn-enroll-card" onclick="openEnrollModal('Foundryman')">Enroll Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CATEGORY 7: VOCATIONAL & OTHERS -->
+            <div class="category-heading">
+                <h2>Vocational & Other Courses</h2>
+                <p class="text-muted">Skill-based courses for immediate employment.</p>
+            </div>
+            <div class="courses-grid d-grid" style="grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 30px;">
+                
+                <!-- Tailoring -->
+                <div class="course-card">
+                    <div class="course-thumb-wrapper">
+                        <img src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?q=80&w=600&auto=format&fit=crop" class="course-thumb" alt="Sewing">
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">Tailoring / Sewing Machine Operator</h3>
+                        <div class="course-duration"><i class='bx bx-time-five'></i> 6-12 Months</div>
+                        <button class="btn-enroll-card" onclick="openEnrollModal('Tailoring')">Enroll Now</button>
+                    </div>
+                </div>
+
+                <!-- Carpenter -->
+                <div class="course-card">
+                    <div class="course-thumb-wrapper">
+                        <img src="https://images.unsplash.com/photo-1611021061285-19a87d55f112?q=80&w=600&auto=format&fit=crop" class="course-thumb" alt="Wood">
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">Carpenter & Wood Training</h3>
+                        <div class="course-duration"><i class='bx bx-time-five'></i> 6-12 Months</div>
+                        <button class="btn-enroll-card" onclick="openEnrollModal('Carpenter')">Enroll Now</button>
+                    </div>
+                </div>
+
+                <!-- Security Guard -->
+                <div class="course-card">
+                    <div class="course-thumb-wrapper">
+                        <img src="https://images.unsplash.com/photo-1555963966-b7ae5404b6ed?q=80&w=600&auto=format&fit=crop" class="course-thumb" alt="Security">
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">Unarmed Security Guard</h3>
+                        <div class="course-duration"><i class='bx bx-time-five'></i> 3 Months</div>
+                        <button class="btn-enroll-card" onclick="openEnrollModal('Security Guard')">Enroll Now</button>
+                    </div>
+                </div>
+
+                <!-- Housekeeping -->
+                <div class="course-card">
+                    <div class="course-thumb-wrapper">
+                        <img src="https://images.unsplash.com/photo-1584622050111-993a426fbf0a?q=80&w=600&auto=format&fit=crop" class="course-thumb" alt="Cleaning">
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">House Keeping Attendant</h3>
+                        <div class="course-duration"><i class='bx bx-time-five'></i> 3 Months</div>
+                        <button class="btn-enroll-card" onclick="openEnrollModal('Housekeeping')">Enroll Now</button>
+                    </div>
+                </div>
+
+                <!-- Plumbing -->
+                <div class="course-card">
+                    <div class="course-thumb-wrapper">
+                        <img src="https://images.unsplash.com/photo-1585704032915-c3400ca199e7?q=80&w=600&auto=format&fit=crop" class="course-thumb" alt="Plumbing">
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">Diploma in Plumbing</h3>
+                        <div class="course-duration"><i class='bx bx-time-five'></i> 6 Months</div>
+                        <button class="btn-enroll-card" onclick="openEnrollModal('Plumbing')">Enroll Now</button>
+                    </div>
+                </div>
+
+                <!-- Animal Health -->
+                <div class="course-card">
+                    <div class="course-thumb-wrapper">
+                        <img src="https://images.unsplash.com/photo-1596272875729-ed2c21ebbbda?q=80&w=600&auto=format&fit=crop" class="course-thumb" alt="Vet">
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">Animal Health Worker / Pashu Dhan</h3>
+                        <div class="course-duration"><i class='bx bx-time-five'></i> 6 Months</div>
+                        <button class="btn-enroll-card" onclick="openEnrollModal('Animal Health Worker')">Enroll Now</button>
+                    </div>
+                </div>
+
+                <!-- Delivery Executive -->
+                <div class="course-card">
+                    <div class="course-thumb-wrapper">
+                        <img src="https://images.unsplash.com/photo-1616401784845-180882ba9ba8?q=80&w=600&auto=format&fit=crop" class="course-thumb" alt="Delivery">
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">Courier / Home Delivery Executive</h3>
+                        <div class="course-duration"><i class='bx bx-time-five'></i> 3-6 Months</div>
+                        <button class="btn-enroll-card" onclick="openEnrollModal('Delivery Executive')">Enroll Now</button>
+                    </div>
+                </div>
+
+                <!-- Cooking -->
+                <div class="course-card">
+                    <div class="course-thumb-wrapper">
+                        <img src="https://images.unsplash.com/photo-1556910103-1c02745a30bf?q=80&w=600&auto=format&fit=crop" class="course-thumb" alt="Cooking">
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">Diploma in Cooking and Baking</h3>
+                        <div class="course-duration"><i class='bx bx-time-five'></i> 6-12 Months</div>
+                        <button class="btn-enroll-card" onclick="openEnrollModal('Cooking')">Enroll Now</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ============================================
+       ENHANCED ENROLLMENT MODAL
+    ============================================ -->
+    <div id="enrollModal" class="enroll-modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeEnrollModal()">&times;</span>
+            
+            <div class="modal-header-banner">
+                <i class='bx bxl-whatsapp' style="font-size: 3rem;"></i>
+                <h3 class="mt-2 mb-0">Admission Enquiry</h3>
+            </div>
+
+            <div class="modal-body">
+                <p class="text-center text-muted mb-4">Fill this form to get instant course details & fee structure on your WhatsApp.</p>
+                
+                <form id="enrollForm" onsubmit="sendToWhatsApp(event)">
+                    <div class="form-group mb-3">
+                        <label class="form-label" style="font-weight: 500;">Full Name <span style="color:red">*</span></label>
+                        <input type="text" id="m_name" class="form-control" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px;" placeholder="Enter your full name" required>
+                    </div>
+                    
+                    <div class="form-group mb-3">
+                        <label class="form-label" style="font-weight: 500;">Mobile Number <span style="color:red">*</span></label>
+                        <input type="tel" id="m_phone" class="form-control" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px;" placeholder="10 Digit Mobile Number" required pattern="[0-9]{10}">
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label class="form-label" style="font-weight: 500;">Interested Course</label>
+                        <input type="text" id="m_course" class="form-control" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; background: #f9f9f9;" readonly>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label class="form-label" style="font-weight: 500;">Qualification</label>
+                        <select id="m_qual" class="form-control" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px;">
+                            <option value="10th Pass">10th Pass</option>
+                            <option value="12th Pass">12th Pass</option>
+                            <option value="Graduate">Graduate</option>
+                            <option value="Post Graduate">Post Graduate</option>
+                            <option value="Diploma/ITI">Diploma / ITI</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group mb-4">
+                        <label class="form-label" style="font-weight: 500;">Your Message (Optional)</label>
+                        <textarea id="m_message" rows="2" class="form-control" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px;" placeholder="I want to know about fees and batch timing..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary w-100 d-flex align-items-center justify-content-center" style="background: #25D366; border: none; padding: 12px; color: white; font-weight: bold; width: 100%; border-radius: 5px; cursor: pointer;">
+                        <i class='bx bxl-whatsapp' style="font-size: 1.2rem; margin-right: 8px;"></i> Send Inquiry via WhatsApp
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================
+       FLOATING ICONS
+    ============================================ -->
+    <div class="floating-icons">
+        <!-- Call Button Left -->
+        <a href="tel:+916205119312" class="icon-btn call-btn-float" title="Call Us Now">
+            <i class='bx bxs-phone-call'></i>
+        </a>
+        <!-- WhatsApp Button Right -->
+        <a href="https://wa.me/916205119312?text=Hello%20UB%20Institute,%20I%20want%20to%20know%20about%20courses." class="icon-btn wa-btn" target="_blank" title="Chat on WhatsApp">
+            <i class='bx bxl-whatsapp'></i>
+        </a>
+    </div>
+
+    <!-- ============================================
+       DARK FOOTER (MATCHING REFERENCE)
+    ============================================ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-main" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; padding-bottom: 40px;">
+                
+                <!-- Col 1: Logo & About -->
+                <div class="footer-col">
+                    <img src="image\logo-wb.png" alt="UB Institute" style="height: 50px; margin-bottom: 20px;">
+                    <p style="line-height: 1.6; color: #bbb; font-size: 0.9rem;">
+                        UB Institute & Training is a premier career education center offering expert-led training in Digital Marketing, Computer Studies, and Vocational Courses with 100% placement assistance.
+                    </p>
+                    <div class="social-icons" style="margin-top: 20px;">
+                        <a href="#" class="social-icon-btn"><i class='bx bxl-facebook'></i></a>
+                        <a href="#" class="social-icon-btn"><i class='bx bxl-instagram'></i></a>
+                        <a href="#" class="social-icon-btn"><i class='bx bxl-youtube'></i></a>
+                        <a href="#" class="social-icon-btn"><i class='bx bxl-linkedin'></i></a>
+                        <a href="#" class="social-icon-btn"><i class='bx bxl-twitter'></i></a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Quick Links -->
+                <div class="footer-col">
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul class="footer-links" style="list-style: none; padding: 0;">
+                        <li><a href="index.html"><i class='bx bx-chevron-right'></i> Home</a></li>
+                        <li><a href="about.html"><i class='bx bx-chevron-right'></i> About Us</a></li>
+                        <li><a href="services.html"><i class='bx bx-chevron-right'></i> Our Services</a></li>
+                        <li><a href="courses.html"><i class='bx bx-chevron-right'></i> All Courses</a></li>
+                        <li><a href="gallery.html"><i class='bx bx-chevron-right'></i> Gallery</a></li>
+                        <li><a href="blog.html"><i class='bx bx-chevron-right'></i> Blog</a></li>
+                        <li><a href="contact.html"><i class='bx bx-chevron-right'></i> Contact Us</a></li>
+                        <li><a href="support.html"><i class='bx bx-chevron-right'></i> FAQs</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Our Courses -->
+                <div class="footer-col">
+                    <h4 class="footer-title">Our Courses</h4>
+                    <ul class="footer-links" style="list-style: none; padding: 0;">
+                        <li><a href="courses.html"><i class='bx bx-chevron-right'></i> Digital Marketing</a></li>
+                        <li><a href="courses.html"><i class='bx bx-chevron-right'></i> Computer Courses</a></li>
+                        <li><a href="courses.html"><i class='bx bx-chevron-right'></i> Vocational Training</a></li>
+                        <li><a href="courses.html"><i class='bx bx-chevron-right'></i> Web Development</a></li>
+                        <li><a href="courses.html"><i class='bx bx-chevron-right'></i> Tally with GST</a></li>
+                        <li><a href="courses.html"><i class='bx bx-chevron-right'></i> Graphic Design</a></li>
+                        <li><a href="courses.html" style="color: #F36B21; font-weight: 600;">View All Courses <i class='bx bx-right-arrow-alt'></i></a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Contact Info -->
+                <div class="footer-col">
+                    <h4 class="footer-title">Contact Info</h4>
+                    <ul class="footer-contact-list" style="list-style: none; padding: 0; color: #bbb;">
+                        <li style="margin-bottom: 15px; display: flex; gap: 10px;">
+                            <i class='bx bxs-map' style="color: #F36B21; font-size: 1.2rem; margin-top: 2px;"></i>
+                            <span>Charka Pathar, Randhiya Road<br>Saraiyahat, Dumka, Jharkhand - 814150</span>
+                        </li>
+                        <li style="margin-bottom: 15px; display: flex; gap: 10px;">
+                            <i class='bx bxs-phone' style="color: #F36B21; font-size: 1.2rem;"></i>
+                            <a href="tel:+916205119312" style="color: #bbb; text-decoration: none;">+91 6205 119 312</a>
+                        </li>
+                        <li style="margin-bottom: 15px; display: flex; gap: 10px;">
+                            <i class='bx bxl-whatsapp' style="color: #25D366; font-size: 1.2rem;"></i>
+                            <a href="https://wa.me/916205119312" target="_blank" style="color: #bbb; text-decoration: none;">WhatsApp Us</a>
+                        </li>
+                        <li style="margin-bottom: 15px; display: flex; gap: 10px;">
+                            <i class='bx bxs-envelope' style="color: #F36B21; font-size: 1.2rem;"></i>
+                            <a href="mailto:UBCENTERS@GMAIL.COM" style="color: #bbb; text-decoration: none; text-transform: uppercase;">UBCENTERS@GMAIL.COM</a>
+                        </li>
+                        <li style="margin-bottom: 20px; display: flex; gap: 10px;">
+                            <i class='bx bxs-time-five' style="color: #F36B21; font-size: 1.2rem;"></i>
+                            <span>Mon - Sat: 9:00 AM - 7:00 PM</span>
+                        </li>
+                    </ul>
+                    <div>
+                        <p style="color: #bbb; font-size: 0.9rem; margin-bottom: 8px;">We Accept:</p>
+                        <div style="display: flex; gap: 10px;">
+                            <div style="width: 40px; height: 25px; background: #333; border-radius: 3px;"></div>
+                            <div style="width: 40px; height: 25px; background: #333; border-radius: 3px;"></div>
+                            <div style="width: 40px; height: 25px; background: #333; border-radius: 3px;"></div>
+                            <div style="width: 40px; height: 25px; background: #333; border-radius: 3px;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;">
+                <p class="copyright" style="margin: 0; font-size: 0.85rem; color: #888;">&copy; 2025 UB Institute & Training. All Rights Reserved.</p>
+                <div style="display: flex; gap: 20px; font-size: 0.85rem;">
+                    <a href="#" style="color: #888; text-decoration: none;">Privacy Policy</a>
+                    <a href="#" style="color: #888; text-decoration: none;">Terms & Conditions</a>
+                    <a href="#" style="color: #888; text-decoration: none;">Refund Policy</a>
+                </div>
+                <p style="margin: 0; font-size: 0.85rem; color: #888;">Designed with <span style="color: #e25555;">&hearts;</span> by <span style="color: #0B3C5D; font-weight: bold;">ABHISHEK KUMAR</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================
+       JAVASCRIPT LOGIC
+    ============================================ -->
+    <script>
+        // 1. Mobile Menu Toggle
+        const navToggle = document.getElementById('navToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        if(navToggle){
+            navToggle.addEventListener('click', () => {
+                navToggle.classList.toggle('active');
+                navMenu.classList.toggle('active');
+            });
+        }
+
+        // 2. Navbar Scroll Effect (White on Scroll, Orange Default)
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            // If scrolled more than 80px, add class 'scrolled'
+            if (window.scrollY > 80) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // 3. Modal Logic
+        const modal = document.getElementById('enrollModal');
+
+        function openEnrollModal(courseName) {
+            document.getElementById('m_course').value = courseName;
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Stop background scrolling
+        }
+
+        function closeEnrollModal() {
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto'; // Restore scrolling
+        }
+
+        // Close on outside click
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                closeEnrollModal();
+            }
+        }
+
+        // 4. WhatsApp Form Logic
+        function sendToWhatsApp(e) {
+            e.preventDefault();
+            
+            // Get Values
+            const name = document.getElementById('m_name').value.trim();
+            const phone = document.getElementById('m_phone').value.trim();
+            const course = document.getElementById('m_course').value;
+            const qual = document.getElementById('m_qual').value;
+            const message = document.getElementById('m_message').value.trim();
+            
+            // Validation
+            if(name === "" || phone === "") {
+                alert("Please fill Name and Phone Number");
+                return;
+            }
+
+            // Replace with your actual WhatsApp Number (Country Code + Number)
+            // Based on your image: +91 6205 119 312
+            const adminNumber = "916205119312"; 
+            
+            // Format Message
+            const whatsappMsg = 
+                `*New Course Enquiry* 🎓%0A%0A` +
+                `*Name:* ${name}%0A` +
+                `*Phone:* ${phone}%0A` +
+                `*Interested In:* ${course}%0A` +
+                `*Qualification:* ${qual}%0A` +
+                `*Message:* ${message ? message : 'I want to know fee details.'}%0A%0A` +
+                `_Sent from website course page_`;
+            
+            // Redirect
+            const url = `https://wa.me/${adminNumber}?text=${whatsappMsg}`;
+            window.open(url, '_blank');
+            
+            // Close modal after sending
+            closeEnrollModal();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,1703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Apply for admission at UB Institute & Training. Start your career with expert-led courses in Digital Marketing, Computer Studies, and Vocational Training with 100% placement assistance.">
+    <meta name="keywords" content="admission, UB Institute, training courses, digital marketing course, computer courses, placement assistance, Dumka">
+    <meta name="author" content="UB Institute & Training">
+    
+    <title>Admission Open 2024-25 - UB Institute & Training | Apply Now</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://i.ibb.co/sXtMbwy/UBW.jpg">
+    
+    <!-- Boxicons CSS -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        /* ============================================
+           CSS VARIABLES & RESET
+        ============================================= */
+:root {
+    /* =========================
+       BRAND COLORS (UB INSTITUTE)
+    ========================= */
+    --primary-color: #F36B21;       /* Orange */
+    --secondary-color: #F9A825;     /* Yellow */
+    --accent-color: #0B3C5D;        /* Deep Blue */
+
+    /* =========================
+       TEXT COLORS
+    ========================= */
+    --text-dark: #1a1a1a;
+    --text-light: #666666;
+
+    /* =========================
+       BACKGROUND COLORS
+    ========================= */
+    --bg-light: #FFF8F0;            /* Warm light background */
+    --white: #ffffff;
+
+    /* =========================
+       UI & BORDERS
+    ========================= */
+    --border-color: #e0e0e0;
+
+    /* =========================
+       STATUS COLORS
+    ========================= */
+    --success-color: #43A047;
+    --warning-color: #F9A825;
+    --danger-color: #D32F2F;
+
+    /* =========================
+       SHADOWS (OPTIMIZED)
+    ========================= */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 5px 20px rgba(0, 0, 0, 0.12);
+    --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.18);
+
+    /* =========================
+       TRANSITION
+    ========================= */
+    --transition: all 0.3s ease;
+
+    /* =========================
+       FONTS
+    ========================= */
+    --font-primary: 'Inter', sans-serif;
+    --font-secondary: 'Poppins', sans-serif;
+}
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--white);
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ============================================
+           HEADER & NAVIGATION
+        ============================================= */
+        .header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            padding: 20px 0;
+            box-shadow: var(--shadow-md);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: var(--white);
+        }
+
+        .logo img {
+            width: 60px;
+            height: 60px;
+            border-radius: 10px;
+            border: 2px solid var(--white);
+            object-fit: cover;
+        }
+
+        .logo-text h1 {
+            font-family: var(--font-secondary);
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .logo-text p {
+            font-size: 0.85rem;
+            opacity: 0.9;
+            margin: 0;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+            padding: 5px 0;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--white);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 2rem;
+            cursor: pointer;
+        }
+
+        /* ============================================
+           HERO SECTION
+        ============================================= */
+        .admission-hero {
+            background: linear-gradient(135deg, rgba(249, 168, 37, 0.9), rgba(235, 201, 81, 0.9)), 
+                        url('https://i.ibb.co/XxVgYjdB/RECEP-2.jpg?w=1200') center/cover;
+            padding: 120px 0 80px;
+            text-align: center;
+            color: var(--white);
+            position: relative;
+        }
+
+        .admission-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.2) 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 10px 30px;
+            border-radius: 30px;
+            margin-bottom: 20px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .admission-hero h1 {
+            font-family: var(--font-secondary);
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .admission-hero p {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .breadcrumb {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.95rem;
+            margin-top: 30px;
+        }
+
+        .breadcrumb a {
+            color: var(--white);
+            opacity: 0.8;
+            transition: var(--transition);
+        }
+
+        .breadcrumb a:hover {
+            opacity: 1;
+        }
+
+        .breadcrumb i {
+            opacity: 0.6;
+        }
+
+        /* ============================================
+           ADMISSION HIGHLIGHTS
+        ============================================= */
+        .admission-highlights {
+            padding: 60px 0;
+            background: var(--bg-light);
+        }
+
+        .highlights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .highlight-card {
+            background: var(--white);
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .highlight-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        }
+
+        .highlight-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-color);
+        }
+
+        .highlight-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .highlight-card h3 {
+            font-family: var(--font-secondary);
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .highlight-card p {
+            color: var(--text-light);
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        .highlight-card ul {
+            margin-top: 15px;
+        }
+
+        .highlight-card ul li {
+            color: var(--text-light);
+            padding: 8px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .highlight-card ul li i {
+            color: var(--success-color);
+            font-size: 1.1rem;
+        }
+
+        /* ============================================
+           MAIN CONTENT SECTION
+        ============================================= */
+        .admission-content {
+            padding: 80px 0;
+            background: var(--white);
+        }
+
+        .content-layout {
+            display: grid;
+            grid-template-columns: 1fr 380px;
+            gap: 50px;
+            align-items: start;
+        }
+
+        /* ============================================
+           ADMISSION FORM
+        ============================================= */
+        .admission-form-section {
+            background: var(--white);
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border-color);
+        }
+
+        .section-title {
+            font-family: var(--font-secondary);
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            color: var(--text-light);
+            margin-bottom: 40px;
+            font-size: 1.05rem;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .form-group label i {
+            color: var(--primary-color);
+            margin-right: 8px;
+        }
+
+        .required {
+            color: var(--danger-color);
+            margin-left: 3px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 15px 20px;
+            border: 2px solid var(--border-color);
+            border-radius: 10px;
+            font-size: 1rem;
+            font-family: var(--font-primary);
+            transition: var(--transition);
+            background: var(--white);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 4px rgba(0, 51, 153, 0.1);
+        }
+
+        .form-control::placeholder {
+            color: #aaa;
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 18px 40px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 30px;
+            font-family: var(--font-secondary);
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 51, 153, 0.3);
+        }
+
+        .submit-btn i {
+            font-size: 1.3rem;
+        }
+
+        .form-note {
+            background: rgba(0, 51, 153, 0.05);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 25px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .form-note p {
+            margin: 0;
+            color: var(--text-light);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* ============================================
+           SIDEBAR
+        ============================================= */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            position: sticky;
+            top: 100px;
+        }
+
+        .sidebar-widget {
+            background: var(--white);
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-color);
+        }
+
+        .widget-title {
+            font-family: var(--font-secondary);
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--border-color);
+            position: relative;
+        }
+
+        .widget-title::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background: var(--primary-color);
+        }
+
+        .widget-title i {
+            margin-right: 10px;
+        }
+
+        .features-list {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .feature-item {
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
+        }
+
+        .feature-icon {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, rgba(0,51,153,0.1), rgba(0,102,204,0.1));
+            color: var(--primary-color);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+
+        .feature-content h4 {
+            font-size: 1.05rem;
+            color: var(--text-dark);
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .feature-content p {
+            margin: 0;
+            color: var(--text-light);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .contact-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 15px 25px;
+            border-radius: 10px;
+            font-weight: 600;
+            transition: var(--transition);
+            border: 2px solid;
+        }
+
+        .contact-btn.call {
+            background: var(--primary-color);
+            color: var(--white);
+            border-color: var(--primary-color);
+        }
+
+        .contact-btn.call:hover {
+            background: var(--secondary-color);
+            border-color: var(--secondary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 51, 153, 0.3);
+        }
+
+        .contact-btn.whatsapp {
+            background: #25D366;
+            color: var(--white);
+            border-color: #25D366;
+        }
+
+        .contact-btn.whatsapp:hover {
+            background: #128C7E;
+            border-color: #128C7E;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+        }
+
+        .map-container {
+            border-radius: 10px;
+            overflow: hidden;
+            height: 300px;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* ============================================
+           FOOTER
+        ============================================= */
+        .footer {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: var(--white);
+            padding-top: 60px;
+        }
+
+        .footer-main {
+            padding-bottom: 40px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 40px;
+        }
+
+        .footer-col h4 {
+            font-family: var(--font-secondary);
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+
+        .footer-logo {
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo img {
+            width: 100px;
+            border-radius: 10px;
+        }
+
+        .footer-description {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 15px;
+        }
+
+        .footer-social a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+
+        .footer-social a:hover {
+            background: var(--primary-color);
+            transform: translateY(-5px);
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+            padding-left: 10px;
+        }
+
+        .footer-contact-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .footer-contact-list li {
+            display: flex;
+            gap: 15px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .footer-contact-list i {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            flex-shrink: 0;
+            margin-top: 3px;
+        }
+
+        .footer-contact-list a {
+            color: rgba(255, 255, 255, 0.8);
+            transition: var(--transition);
+        }
+
+        .footer-contact-list a:hover {
+            color: var(--white);
+        }
+
+        .payment-methods {
+            margin-top: 20px;
+        }
+
+        .payment-methods p {
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        .payment-icons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .payment-icons img {
+            height: 25px;
+            border-radius: 4px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 25px 0;
+        }
+
+        .footer-bottom-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .copyright,
+        .designer-credit {
+            color: rgba(255, 255, 255, 0.7);
+            margin: 0;
+        }
+
+        .heart {
+            color: #ff6b6b;
+            animation: heartbeat 1.5s ease infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .designer-credit a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .designer-credit a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom-links {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .footer-bottom-links a {
+            color: rgba(255, 255, 255, 0.7);
+            transition: var(--transition);
+        }
+
+        .footer-bottom-links a:hover {
+            color: var(--white);
+        }
+
+        .separator {
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        /* ============================================
+           RESPONSIVE DESIGN
+        ============================================= */
+        @media (max-width: 1024px) {
+            .content-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                position: static;
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .admission-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .admission-hero p {
+                font-size: 1.1rem;
+            }
+
+            .highlights-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .admission-form-section {
+                padding: 30px 20px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-bottom-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .admission-hero {
+                padding: 80px 0 60px;
+            }
+
+            .admission-hero h1 {
+                font-size: 2rem;
+            }
+
+            .highlight-card {
+                padding: 30px 20px;
+            }
+
+            .sidebar-widget {
+                padding: 25px;
+            }
+        }
+
+        /* ============================================
+           SCROLL TO TOP BUTTON
+        ============================================= */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            border-radius: 50%;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            z-index: 999;
+        }
+
+        .scroll-top.active {
+            display: flex;
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================
+         HEADER & NAVIGATION
+    ============================================= -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">
+                    <img src="image\logo-wb.png" alt="UB Institute Logo">
+                    <div class="logo-text">
+                        <h1>UB Institute</h1>
+                        <p>& Training Center</p>
+                    </div>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="admission.html" class="active">Admission</a></li>
+                    <li><a href="gallery.html" class="active">gallery</a></li>
+                    <li><a href="support.html" class="active">Support</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <button class="mobile-menu-toggle" aria-label="Toggle Menu">
+                    <i class='bx bx-menu'></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ============================================
+         HERO SECTION
+    ============================================= -->
+    <section class="admission-hero">
+        <div class="hero-content" data-aos="fade-up">
+            <span class="hero-badge">🎓 ADMISSIONS OPEN</span>
+            <h1>Admission Open </h1>
+            <p>Start Your Career Journey with UB Institute & Training</p>
+            <div class="breadcrumb">
+                <a href="index.html"><i class='bx bx-home'></i> Home</a>
+                <i class='bx bx-chevron-right'></i>
+                <span>Admission</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         ADMISSION HIGHLIGHTS
+    ============================================= -->
+    <section class="admission-highlights">
+        <div class="container">
+            <div class="highlights-grid">
+                
+                <!-- Highlight Card 1 -->
+                <div class="highlight-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="highlight-icon">
+                        <i class='bx bx-calendar-check'></i>
+                    </div>
+                    <h3>Admission Status</h3>
+                    <p><strong>Admissions Open for 2024–25</strong></p>
+                    <p style="margin-top: 10px;">Hurry! Limited seats available. Join India's leading training institute and transform your career.</p>
+                </div>
+
+                <!-- Highlight Card 2 -->
+                <div class="highlight-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="highlight-icon">
+                        <i class='bx bx-book-open'></i>
+                    </div>
+                    <h3>Courses Available</h3>
+                    <ul>
+                        <li><i class='bx bx-check-circle'></i> Digital Marketing</li>
+                        <li><i class='bx bx-check-circle'></i> Computer Courses</li>
+                        <li><i class='bx bx-check-circle'></i> Vocational Training</li>
+                        <li><i class='bx bx-check-circle'></i> Web Development</li>
+                    </ul>
+                </div>
+
+                <!-- Highlight Card 3 -->
+                <div class="highlight-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="highlight-icon">
+                        <i class='bx bx-briefcase'></i>
+                    </div>
+                    <h3>Placement Support</h3>
+                    <ul>
+                        <li><i class='bx bx-check-circle'></i> 100% Placement Assistance</li>
+                        <li><i class='bx bx-check-circle'></i> Internship Opportunities</li>
+                        <li><i class='bx bx-check-circle'></i> Career Counseling</li>
+                        <li><i class='bx bx-check-circle'></i> Resume Building</li>
+                    </ul>
+                </div>
+
+                <!-- Highlight Card 4 -->
+                <div class="highlight-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="highlight-icon">
+                        <i class='bx bx-time-five'></i>
+                    </div>
+                    <h3>Batch Timings</h3>
+                    <ul>
+                        <li><i class='bx bx-check-circle'></i> Morning Batches</li>
+                        <li><i class='bx bx-check-circle'></i> Evening Batches</li>
+                        <li><i class='bx bx-check-circle'></i> Weekend Batches</li>
+                        <li><i class='bx bx-check-circle'></i> Flexible Timings</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         ADMISSION FORM & SIDEBAR
+    ============================================= -->
+    <section class="admission-content">
+        <div class="container">
+            <div class="content-layout">
+                
+                <!-- Admission Form -->
+                <div class="admission-form-section" data-aos="fade-right">
+                    <h2 class="section-title">Apply for Admission</h2>
+                    <p class="section-subtitle">Fill out the form below and our admission team will contact you shortly.</p>
+
+                    <form id="admissionForm">
+                        <!-- Full Name -->
+                        <div class="form-group">
+                            <label for="fullName">
+                                <i class='bx bx-user'></i> Full Name <span class="required">*</span>
+                            </label>
+                            <input type="text" id="fullName" class="form-control" placeholder="Enter your full name" required>
+                        </div>
+
+                        <!-- Phone & Email Row -->
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">
+                                    <i class='bx bx-phone'></i> Phone Number <span class="required">*</span>
+                                </label>
+                                <input type="tel" id="phone" class="form-control" placeholder="+91 XXXXX XXXXX" pattern="[0-9]{10}" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">
+                                    <i class='bx bx-envelope'></i> Email Address <span class="required">*</span>
+                                </label>
+                                <input type="email" id="email" class="form-control" placeholder="your.email@example.com" required>
+                            </div>
+                        </div>
+
+                        <!-- Qualification -->
+                        <div class="form-group">
+                            <label for="qualification">
+                                <i class='bx bx-book'></i> Highest Qualification
+                            </label>
+                            <select id="qualification" class="form-control">
+                                <option value="">-- Select Qualification --</option>
+                                <option value="10th Pass">10th Pass</option>
+                                <option value="12th Pass">12th Pass</option>
+                                <option value="Graduate">Graduate</option>
+                                <option value="Post Graduate">Post Graduate</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+
+                        <!-- Course & Batch Row -->
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="course">
+                                    <i class='bx bx-laptop'></i> Course Applying For <span class="required">*</span>
+                                </label>
+                                <select id="course" class="form-control" required>
+                                    <option value="">-- Select Course --</option>
+                                    <option value="Digital Marketing">Digital Marketing</option>
+                                    <option value="Web Development">Web Development</option>
+                                    <option value="Graphic Design">Graphic Design</option>
+                                    <option value="Tally with GST">Tally with GST</option>
+                                    <option value="DCA">Diploma in Computer Application</option>
+                                    <option value="ADCA">Advanced DCA</option>
+                                    <option value="Python Programming">Python Programming</option>
+                                    <option value="Java Programming">Java Programming</option>
+                                    <option value="Data Entry">Data Entry Operator</option>
+                                    <option value="Other">Other Course</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="batch">
+                                    <i class='bx bx-time'></i> Preferred Batch Time
+                                </label>
+                                <select id="batch" class="form-control">
+                                    <option value="">-- Select Batch --</option>
+                                    <option value="Morning (9 AM - 12 PM)">Morning (9 AM - 12 PM)</option>
+                                    <option value="Afternoon (12 PM - 3 PM)">Afternoon (12 PM - 3 PM)</option>
+                                    <option value="Evening (4 PM - 7 PM)">Evening (4 PM - 7 PM)</option>
+                                    <option value="Weekend (Sat-Sun)">Weekend (Sat-Sun)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- City -->
+                        <div class="form-group">
+                            <label for="city">
+                                <i class='bx bx-map'></i> City / Location
+                            </label>
+                            <input type="text" id="city" class="form-control" placeholder="Enter your city">
+                        </div>
+
+                        <!-- Message -->
+                        <div class="form-group">
+                            <label for="message">
+                                <i class='bx bx-message-detail'></i> Message / Query (Optional)
+                            </label>
+                            <textarea id="message" class="form-control" rows="4" placeholder="Any specific questions or requirements?"></textarea>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" class="submit-btn">
+                            <i class='bx bxl-whatsapp'></i>
+                            Apply for Admission
+                        </button>
+
+                        <!-- Form Note -->
+                        <div class="form-note">
+                            <p><i class='bx bx-info-circle'></i> <strong>Note:</strong> After submitting, you'll be redirected to WhatsApp with your details. You can also fill the <a href="https://forms.gle/MnRX12A92f1TVErW9" target="_blank" style="color: var(--primary-color); font-weight: 600;">Google Form</a> for detailed application.</p>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Sidebar -->
+                <aside class="sidebar" data-aos="fade-left">
+                    
+                    <!-- Why Choose UB Institute -->
+                    <div class="sidebar-widget">
+                        <h3 class="widget-title">
+                            <i class='bx bx-star'></i> Why Choose UB Institute
+                        </h3>
+                        <div class="features-list">
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class='bx bx-user-check'></i>
+                                </div>
+                                <div class="feature-content">
+                                    <h4>Industry-Expert Trainers</h4>
+                                    <p>Learn from professionals with 10+ years of experience</p>
+                                </div>
+                            </div>
+
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class='bx bx-code-alt'></i>
+                                </div>
+                                <div class="feature-content">
+                                    <h4>Practical Learning</h4>
+                                    <p>Hands-on training with real projects and live campaigns</p>
+                                </div>
+                            </div>
+
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class='bx bx-wallet'></i>
+                                </div>
+                                <div class="feature-content">
+                                    <h4>Affordable Fees</h4>
+                                    <p>Quality education at pocket-friendly prices with EMI options</p>
+                                </div>
+                            </div>
+
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class='bx bx-briefcase-alt'></i>
+                                </div>
+                                <div class="feature-content">
+                                    <h4>Placement Assistance</h4>
+                                    <p>100% job support with interview preparation & resume building</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Contact -->
+                    <div class="sidebar-widget">
+                        <h3 class="widget-title">
+                            <i class='bx bx-support'></i> Quick Contact
+                        </h3>
+                        <div class="contact-buttons">
+                            <a href="tel:+916205119312" class="contact-btn call">
+                                <i class='bx bx-phone-call'></i>
+                                Call Now
+                            </a>
+                            <a href="https://wa.me/916205119312?text=Hi%2C%20I%20want%20to%20know%20about%20admission%20process" target="_blank" class="contact-btn whatsapp">
+                                <i class='bx bxl-whatsapp'></i>
+                                WhatsApp Us
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Google Map -->
+                    <div class="sidebar-widget">
+                        <h3 class="widget-title">
+                            <i class='bx bx-map'></i> Our Location
+                        </h3>
+                        <div class="map-container">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3628.19488645645!2d87.00601157459032!3d24.582469556326405!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f0e7a222c4ed3f%3A0xa5afeb1a4241922e!2sUB%20INSTITUTE%20%26%20TRAINING!5e0!3m2!1sen!2sin!4v1765703868865!5m2!1sen!2sin" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                        <p style="margin-top: 15px; color: var(--text-light); font-size: 0.9rem; line-height: 1.6;">
+                            <i class='bx bxs-map' style="color: var(--primary-color);"></i>
+                            Charka Pathar, Randhiya Road, Saraiyahat, Dumka, Jharkhand - 814150
+                        </p>
+                    </div>
+
+                </aside>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         FOOTER
+    ============================================= -->
+    <footer class="footer" id="footer">
+      <div class="footer-main">
+        <div class="container">
+          <div class="footer-grid">
+            <!-- Footer Column 1 - About -->
+            <div class="footer-col footer-about">
+              <a href="index.html" class="footer-logo">
+                <img
+                  src="image\logo-wb.png"
+                  alt="UB Institute Logo"
+                />
+              </a>
+              <p class="footer-description">
+                UB Institute & Training is a premier career education center
+                offering expert-led training in Digital Marketing, Computer
+                Studies, and Vocational Courses with 100% placement assistance.
+              </p>
+              <div class="footer-social">
+                <a
+                  href="https://www.facebook.com/profile.php?id=61573524307886"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="Facebook"
+                >
+                  <i class="bx bxl-facebook"></i>
+                </a>
+                <a
+                  href="https://www.instagram.com/ub_institute_training?igsh=MTFsY2puenk3eTUzbA=="
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="Instagram"
+                >
+                  <i class="bx bxl-instagram"></i>
+                </a>
+                <a
+                  href="https://youtube.com/@ubpoints?si=iM1HAKkH_yBt6VBW"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="YouTube"
+                >
+                  <i class="bx bxl-youtube"></i>
+                </a>
+                <a
+                  href="https://www.instagram.com/ub_institute_training?igsh=MTFsY2puenk3eTUzbA=="
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="LinkedIn"
+                >
+                  <i class="bx bxl-linkedin"></i>
+                </a>
+                <a
+                  href="https://pin.it/48H7IHjPy"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="Twitter"
+                >
+                  <i class="bx bxl-twitter"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Footer Column 2 - Quick Links -->
+            <div class="footer-col">
+              <h4 class="footer-title">Quick Links</h4>
+              <ul class="footer-links">
+                <li>
+                  <a href="index.html"
+                    ><i class="bx bx-chevron-right"></i> Home</a
+                  >
+                </li>
+                <li>
+                  <a href="about.html"
+                    ><i class="bx bx-chevron-right"></i> About Us</a
+                  >
+                </li>
+                <li>
+                  <a href="services.html"
+                    ><i class="bx bx-chevron-right"></i> Our Services</a
+                  >
+                </li>
+                <li>
+                  <a href="courses.html"
+                    ><i class="bx bx-chevron-right"></i> All Courses</a
+                  >
+                </li>
+                <li>
+                  <a href="gallery.html"
+                    ><i class="bx bx-chevron-right"></i> Gallery</a
+                  >
+                </li>
+                <li>
+                  <a href="blog.html"
+                    ><i class="bx bx-chevron-right"></i> Blog</a
+                  >
+                </li>
+                <li>
+                  <a href="contact.html"
+                    ><i class="bx bx-chevron-right"></i> Contact Us</a
+                  >
+                </li>
+                <li>
+                  <a href="faq.html"
+                    ><i class="bx bx-chevron-right"></i> FAQs</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <!-- Footer Column 3 - Our Courses -->
+            <div class="footer-col">
+              <h4 class="footer-title">Our Courses</h4>
+              <ul class="footer-links">
+                <li>
+                  <a href="digital-marketing.html"
+                    ><i class="bx bx-chevron-right"></i> Digital Marketing</a
+                  >
+                </li>
+                <li>
+                  <a href="computer-courses.html"
+                    ><i class="bx bx-chevron-right"></i> Computer Courses</a
+                  >
+                </li>
+                <li>
+                  <a href="vocational-courses.html"
+                    ><i class="bx bx-chevron-right"></i> Vocational Training</a
+                  >
+                </li>
+                <li>
+                  <a href="course-detail.html?course=web-development"
+                    ><i class="bx bx-chevron-right"></i> Web Development</a
+                  >
+                </li>
+                <li>
+                  <a href="course-detail.html?course=tally-gst"
+                    ><i class="bx bx-chevron-right"></i> Tally with GST</a
+                  >
+                </li>
+                <li>
+                  <a href="course-detail.html?course=graphic-design"
+                    ><i class="bx bx-chevron-right"></i> Graphic Design</a
+                  >
+                </li>
+                <li>
+                  <a href="courses.html"
+                    ><i class="bx bx-chevron-right"></i> View All Courses →</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <!-- Footer Column 4 - Contact Info -->
+            <div class="footer-col footer-contact">
+              <h4 class="footer-title">Contact Info</h4>
+              <ul class="footer-contact-list">
+                <li>
+                  <i class="bx bxs-map"></i>
+                  <span>
+                    Charka Pathar, Randhiya Road<br />
+                    Saraiyahat, Dumka, Jharkhand - 814150
+                  </span>
+                </li>
+                <li>
+                  <i class="bx bxs-phone-call"></i>
+                  <span>
+                    <a href="tel:+916205119312">+91 6205 119 312</a>
+                  </span>
+                </li>
+                <li>
+                  <i class="bx bxl-whatsapp"></i>
+                  <span>
+                    <a href="https://wa.me/916205119312">WhatsApp Us</a>
+                  </span>
+                </li>
+                <li>
+                  <i class="bx bxs-envelope"></i>
+                  <span>
+                    <a href="mailto:UBCENTERS@GMAIL.COM">UBCENTERS@GMAIL.COM</a>
+                  </span>
+                </li>
+                <li>
+                  <i class="bx bxs-time"></i>
+                  <span> Mon - Sat: 9:00 AM - 7:00 PM </span>
+                </li>
+              </ul>
+
+              <!-- Payment Methods -->
+              <div class="payment-methods">
+                <p>We Accept:</p>
+                <div class="payment-icons">
+                  <img
+                    src="https://via.placeholder.com/40x25/FFFFFF/1E3A8A?text=UPI"
+                    alt="UPI"
+                  />
+                  <img
+                    src="https://via.placeholder.com/40x25/FFFFFF/1E3A8A?text=GPay"
+                    alt="Google Pay"
+                  />
+                  <img
+                    src="https://via.placeholder.com/40x25/FFFFFF/1E3A8A?text=PhonePe"
+                    alt="PhonePe"
+                  />
+                  <img
+                    src="https://via.placeholder.com/40x25/FFFFFF/1E3A8A?text=Razorpay"
+                    alt="Razorpay"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div class="container">
+          <div class="footer-bottom-content">
+            <p class="copyright">
+              © <span id="currentYear">2024</span> UB Institute & Training. All
+              Rights Reserved.
+            </p>
+            <p class="designer-credit">
+              Designed with <span class="heart">❤️</span> by
+              <a href="https://i-m-er-abhi.vercel.app" target="_blank"
+                >ABHISHEK KUMAR</a
+              >
+            </p>
+            <div class="footer-bottom-links">
+              <a href="privacy-policy.html">Privacy Policy</a>
+              <span class="separator">|</span>
+              <a href="terms.html">Terms & Conditions</a>
+              <span class="separator">|</span>
+              <a href="refund-policy.html">Refund Policy</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <div class="scroll-top" id="scrollTop">
+        <i class='bx bx-up-arrow-alt'></i>
+    </div>
+
+    <!-- ============================================
+         JAVASCRIPT
+    ============================================= -->
+    
+    <!-- AOS Animation JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            offset: 100
+        });
+
+        // Update current year
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Scroll to Top Button
+        const scrollTopBtn = document.getElementById('scrollTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollTopBtn.classList.add('active');
+            } else {
+                scrollTopBtn.classList.remove('active');
+            }
+        });
+
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Form Submission - Redirect to WhatsApp with full details
+        document.getElementById('admissionForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Get form values
+            const fullName = document.getElementById('fullName').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const qualification = document.getElementById('qualification').value;
+            const course = document.getElementById('course').value;
+            const batch = document.getElementById('batch').value;
+            const city = document.getElementById('city').value.trim();
+            const message = document.getElementById('message').value.trim();
+
+            // Validation
+            if (!fullName || !phone || !email || !course) {
+                alert('Please fill in all required fields marked with *');
+                return;
+            }
+
+            // Phone validation (10 digits)
+            const phoneRegex = /^[0-9]{10}$/;
+            if (!phoneRegex.test(phone)) {
+                alert('Please enter a valid 10-digit phone number');
+                return;
+            }
+
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert('Please enter a valid email address');
+                return;
+            }
+
+            // Create WhatsApp message
+            let whatsappMessage = `*🎓 NEW ADMISSION APPLICATION*%0A%0A`;
+            whatsappMessage += `*👤 Name:* ${fullName}%0A`;
+            whatsappMessage += `*📱 Phone:* ${phone}%0A`;
+            whatsappMessage += `*📧 Email:* ${email}%0A`;
+            
+            if (qualification) {
+                whatsappMessage += `*🎓 Qualification:* ${qualification}%0A`;
+            }
+            
+            whatsappMessage += `*📚 Course:* ${course}%0A`;
+            
+            if (batch) {
+                whatsappMessage += `*🕒 Preferred Batch:* ${batch}%0A`;
+            }
+            
+            if (city) {
+                whatsappMessage += `*📍 City:* ${city}%0A`;
+            }
+            
+            if (message) {
+                whatsappMessage += `*💬 Message:* ${message}%0A`;
+            }
+
+            whatsappMessage += `%0A_Sent from UB Institute Admission Form_`;
+
+            // WhatsApp number
+            const whatsappNumber = '916205119312';
+
+            // Create WhatsApp URL
+            const whatsappURL = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+
+            // Show confirmation
+            if (confirm('Your application will be sent via WhatsApp. Click OK to continue.')) {
+                // Open WhatsApp
+                window.open(whatsappURL, '_blank');
+
+                // Reset form
+                this.reset();
+
+                // Show success message
+                setTimeout(() => {
+                    alert('✅ Application submitted successfully! Our team will contact you shortly.\n\nYou can also fill the detailed Google Form: https://forms.gle/MnRX12A92f1TVErW9');
+                }, 500);
+            }
+        });
+
+        // Mobile Menu Toggle (if you want to add mobile menu functionality)
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        if (mobileMenuToggle) {
+            mobileMenuToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                const icon = mobileMenuToggle.querySelector('i');
+                icon.classList.toggle('bx-menu');
+                icon.classList.toggle('bx-x');
+            });
+        }
+
+        // Form field animations
+        const formInputs = document.querySelectorAll('.form-control');
+        
+        formInputs.forEach(input => {
+            input.addEventListener('focus', function() {
+                this.parentElement.classList.add('focused');
+            });
+
+            input.addEventListener('blur', function() {
+                if (!this.value) {
+                    this.parentElement.classList.remove('focused');
+                }
+            });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add loading animation to submit button
+        const submitBtn = document.querySelector('.submit-btn');
+        if (submitBtn) {
+            submitBtn.addEventListener('click', function() {
+                if (document.getElementById('admissionForm').checkValidity()) {
+                    this.innerHTML = '<i class="bx bx-loader-alt bx-spin"></i> Processing...';
+                    setTimeout(() => {
+                        this.innerHTML = '<i class="bx bxl-whatsapp"></i> Apply for Admission';
+                    }, 2000);
+                }
+            });
+        }
+
+        // Console message for developers
+        console.log('%c🎓 UB Institute & Training - Admission Page', 'color: #003399; font-size: 20px; font-weight: bold;');
+        console.log('%cDesigned with ❤️ by Abhishek Kumar', 'color: #666; font-size: 14px;');
+        console.log('%chttps://i-m-er-abhi.vercel.app', 'color: #0066cc; font-size: 12px;');
+    </script>
+
+</body>
+
+</html>

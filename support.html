@@ -1,0 +1,1764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Get instant support from UB Institute & Training. Chat with UB Assistant, contact us via WhatsApp, phone, or social media. 24/7 help available.">
+    <meta name="keywords" content="support, help center, UB Assistant, contact support, customer service, UB Institute">
+    <meta name="author" content="UB Institute & Training">
+    
+    <title>Support & Help Center - UB Assistant | UB Institute & Training</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://i.ibb.co/sXtMbwy/UBW.jpg">
+    
+    <!-- Boxicons CSS -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        /* ============================================
+           CSS VARIABLES & RESET
+        ============================================= */
+:root {
+    /* =========================
+       PRIMARY BRAND COLORS (ORANGE THEME)
+    ========================= */
+    --primary-color: #F36B21;        /* Main Orange */
+    --secondary-color: #F9A825;      /* Yellow Accent */
+    --accent-color: #0B3C5D;         /* Deep Blue for headings */
+
+    /* =========================
+       TEXT COLORS
+    ========================= */
+    --text-dark: #1A1A1A;
+    --text-light: #666666;
+
+    /* =========================
+       BACKGROUNDS
+    ========================= */
+    --bg-light: #FFF8F0;             /* Warm light background */
+    --white: #ffffff;
+    --border-color: #e6e6e6;
+
+    /* =========================
+       STATUS COLORS
+    ========================= */
+    --success-color: #43A047;
+    --warning-color: #F9A825;
+    --danger-color: #D32F2F;
+
+    /* =========================
+       SHADOWS (UNCHANGED – GOOD)
+    ========================= */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 5px 20px rgba(0, 0, 0, 0.12);
+    --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.18);
+
+    /* =========================
+       TRANSITION
+    ========================= */
+    --transition: all 0.3s ease;
+
+    /* =========================
+       FONTS (UNCHANGED)
+    ========================= */
+    --font-primary: 'Inter', sans-serif;
+    --font-secondary: 'Poppins', sans-serif;
+}
+
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--white);
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ============================================
+           HEADER & NAVIGATION
+        ============================================= */
+        .header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            padding: 20px 0;
+            box-shadow: var(--shadow-md);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: var(--white);
+        }
+
+        .logo img {
+            width: 60px;
+            height: 60px;
+            border-radius: 10px;
+            border: 2px solid var(--white);
+            object-fit: cover;
+        }
+
+        .logo-text h1 {
+            font-family: var(--font-secondary);
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .logo-text p {
+            font-size: 0.85rem;
+            opacity: 0.9;
+            margin: 0;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+            padding: 5px 0;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--white);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        /* ============================================
+           HERO SECTION
+        ============================================= */
+        .support-hero {
+            background: linear-gradient(135deg, rgba(243, 107, 33, 0.95), rgba(249, 168, 37, 0.9)), 
+                        url('https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=1200') center/cover;
+            padding: 120px 0 80px;
+            text-align: center;
+            color: var(--white);
+            position: relative;
+        }
+
+        .support-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.2) 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 10px 30px;
+            border-radius: 30px;
+            margin-bottom: 20px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .support-hero h1 {
+            font-family: var(--font-secondary);
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .support-hero p {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .breadcrumb {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.95rem;
+            margin-top: 30px;
+        }
+
+        .breadcrumb a {
+            color: var(--white);
+            opacity: 0.8;
+            transition: var(--transition);
+        }
+
+        .breadcrumb a:hover {
+            opacity: 1;
+        }
+
+        /* ============================================
+           QUICK CONTACT CARDS
+        ============================================= */
+        .quick-contact {
+            padding: 60px 0;
+            background: var(--white);
+            margin-top: -50px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .contact-card {
+            background: var(--white);
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: var(--shadow-lg);
+            text-align: center;
+            border: 2px solid transparent;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-color);
+        }
+
+        .contact-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: var(--white);
+            position: relative;
+        }
+
+        .contact-card.phone .contact-icon {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+        }
+
+        .contact-card.whatsapp .contact-icon {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+        }
+
+        .contact-card.instagram .contact-icon {
+            background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+        }
+
+        .contact-card.facebook .contact-icon {
+            background: linear-gradient(135deg, #1877f2, #0c63d4);
+        }
+
+        .contact-card.youtube .contact-icon {
+            background: linear-gradient(135deg, #ff0000, #cc0000);
+        }
+
+        .contact-card.form .contact-icon {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        }
+
+        .contact-card h3 {
+            font-family: var(--font-secondary);
+            font-size: 1.3rem;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+        }
+
+        .contact-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .contact-btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 30px;
+            background: var(--primary-color);
+            color: var(--white);
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .contact-btn:hover {
+            background: var(--secondary-color);
+            transform: scale(1.05);
+        }
+
+        /* ============================================
+           UB ASSISTANT CHATBOT
+        ============================================= */
+        .chatbot-section {
+            padding: 80px 0;
+            background: var(--bg-light);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            font-family: var(--font-secondary);
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 20px auto 0;
+        }
+
+        .chatbot-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--white);
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+            border: 2px solid var(--border-color);
+        }
+
+        .chatbot-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            padding: 25px 30px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .bot-avatar {
+            width: 60px;
+            height: 60px;
+            background: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--primary-color);
+        }
+
+        .bot-info h3 {
+            font-family: var(--font-secondary);
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .bot-status {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            opacity: 0.95;
+        }
+
+        .status-indicator {
+            width: 10px;
+            height: 10px;
+            background: #28a745;
+            border-radius: 50%;
+            animation: pulse-dot 2s infinite;
+        }
+
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .chat-messages {
+            height: 500px;
+            overflow-y: auto;
+            padding: 30px;
+            background: #f5f7fa;
+            scroll-behavior: smooth;
+        }
+
+        .chat-messages::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .chat-messages::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        .chat-messages::-webkit-scrollbar-thumb {
+            background: var(--primary-color);
+            border-radius: 10px;
+        }
+
+        .message {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            animation: fadeInUp 0.3s ease;
+        }
+
+        .message.user {
+            flex-direction: row-reverse;
+        }
+
+        .message-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+
+        .message.bot .message-avatar {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+        }
+
+        .message.user .message-avatar {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: var(--white);
+        }
+
+        .message-content {
+            max-width: 70%;
+        }
+
+        .message-bubble {
+            padding: 15px 20px;
+            border-radius: 15px;
+            line-height: 1.6;
+            position: relative;
+        }
+
+        .message.bot .message-bubble {
+            background: var(--white);
+            border: 1px solid var(--border-color);
+            border-bottom-left-radius: 5px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .message.user .message-bubble {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            border-bottom-right-radius: 5px;
+        }
+
+        .message-time {
+            font-size: 0.75rem;
+            opacity: 0.7;
+            margin-top: 5px;
+        }
+
+        .message.user .message-time {
+            text-align: right;
+        }
+
+        .quick-replies {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .quick-reply-btn {
+            padding: 8px 16px;
+            background: var(--white);
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 600;
+        }
+
+        .quick-reply-btn:hover {
+            background: var(--primary-color);
+            color: var(--white);
+        }
+
+        .typing-indicator {
+            display: none;
+            padding: 15px 20px;
+            background: var(--white);
+            border-radius: 15px;
+            border-bottom-left-radius: 5px;
+            width: fit-content;
+            border: 1px solid var(--border-color);
+        }
+
+        .typing-indicator.active {
+            display: block;
+        }
+
+        .typing-dots {
+            display: flex;
+            gap: 5px;
+        }
+
+        .typing-dots span {
+            width: 8px;
+            height: 8px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            animation: typing 1.4s infinite;
+        }
+
+        .typing-dots span:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .typing-dots span:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes typing {
+            0%, 60%, 100% { transform: translateY(0); }
+            30% { transform: translateY(-10px); }
+        }
+
+        .chat-input {
+            padding: 20px 30px;
+            background: var(--white);
+            border-top: 2px solid var(--border-color);
+            display: flex;
+            gap: 15px;
+        }
+
+        .chat-input input {
+            flex: 1;
+            padding: 15px 20px;
+            border: 2px solid var(--border-color);
+            border-radius: 30px;
+            font-size: 1rem;
+            font-family: var(--font-primary);
+            transition: var(--transition);
+        }
+
+        .chat-input input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .send-btn {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            border: none;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .send-btn:hover {
+            transform: scale(1.1);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* ============================================
+           TEAM SECTION
+        ============================================= */
+        .team-section {
+            padding: 80px 0;
+            background: var(--white);
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .team-card {
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: var(--shadow-md);
+            overflow: hidden;
+            border: 2px solid transparent;
+            transition: var(--transition);
+        }
+
+        .team-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-color);
+        }
+
+        .team-image {
+            width: 150px;
+            height: 150px;
+            margin: 30px auto 20px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: var(--white);
+            font-weight: 700;
+        }
+
+        .team-info {
+            padding: 0 30px 30px;
+            text-align: center;
+        }
+
+        .team-name {
+            font-family: var(--font-secondary);
+            font-size: 1.4rem;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+
+        .team-role {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .team-contact {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .team-contact a {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: var(--transition);
+        }
+
+        .team-contact a:hover {
+            color: var(--primary-color);
+        }
+
+        /* ============================================
+           FAQ SECTION
+        ============================================= */
+        .faq-section {
+            padding: 80px 0;
+            background: var(--bg-light);
+        }
+
+        .faq-container {
+            max-width: 900px;
+            margin: 50px auto 0;
+        }
+
+        .faq-item {
+            background: var(--white);
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: var(--shadow-sm);
+            overflow: hidden;
+            border: 2px solid transparent;
+            transition: var(--transition);
+        }
+
+        .faq-item.active {
+            border-color: var(--primary-color);
+        }
+
+        .faq-question {
+            padding: 25px 30px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            background: var(--white);
+            transition: var(--transition);
+        }
+
+        .faq-question:hover {
+            background: var(--bg-light);
+        }
+
+        .faq-question h4 {
+            font-family: var(--font-secondary);
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            flex: 1;
+        }
+
+        .faq-icon {
+            width: 30px;
+            height: 30px;
+            background: var(--primary-color);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+
+        .faq-answer-content {
+            padding: 0 30px 25px;
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        /* ============================================
+           FOOTER
+        ============================================= */
+        .footer {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: var(--white);
+            padding-top: 60px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo img {
+            width: 100px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .footer-description {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 15px;
+        }
+
+        .footer-social a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+
+        .footer-social a:hover {
+            background: var(--primary-color);
+            transform: translateY(-5px);
+        }
+
+        .footer-title {
+            font-family: var(--font-secondary);
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+            padding-left: 10px;
+        }
+
+        .footer-contact-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .footer-contact-list li {
+            display: flex;
+            gap: 15px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .footer-contact-list i {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            flex-shrink: 0;
+            margin-top: 3px;
+        }
+
+        .footer-contact-list a {
+            color: rgba(255, 255, 255, 0.8);
+            transition: var(--transition);
+        }
+
+        .footer-contact-list a:hover {
+            color: var(--white);
+        }
+
+        .payment-methods {
+            margin-top: 20px;
+        }
+
+        .payment-icons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .payment-icons img {
+            height: 25px;
+            border-radius: 4px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 25px 0;
+        }
+
+        .footer-bottom-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .copyright,
+        .designer-credit {
+            color: rgba(255, 255, 255, 0.7);
+            margin: 0;
+        }
+
+        .heart {
+            color: #ff6b6b;
+            animation: heartbeat 1.5s ease infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .designer-credit a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .footer-bottom-links {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .footer-bottom-links a {
+            color: rgba(255, 255, 255, 0.7);
+            transition: var(--transition);
+        }
+
+        .footer-bottom-links a:hover {
+            color: var(--white);
+        }
+
+        .separator {
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        /* ============================================
+           SCROLL TO TOP
+        ============================================= */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            border-radius: 50%;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            z-index: 999;
+        }
+
+        .scroll-top.active {
+            display: flex;
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-5px);
+        }
+
+        /* ============================================
+           RESPONSIVE
+        ============================================= */
+        @media (max-width: 1024px) {
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .support-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .contact-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .chat-messages {
+                height: 400px;
+            }
+
+            .message-content {
+                max-width: 85%;
+            }
+
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-bottom-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================
+         HEADER & NAVIGATION
+    ============================================= -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">
+                    <img src="image\logo-wb.png" alt="UB Institute Logo">
+  
+                </a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="placement.html">Placement</a></li>
+                    <li><a href="gallery.html">gallery</a></li>
+                    <li><a href="support.html" class="active">Support</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ============================================
+         HERO SECTION
+    ============================================= -->
+    <section class="support-hero">
+        <div class="hero-content" data-aos="fade-up">
+            <span class="hero-badge">🤖 24/7 SUPPORT</span>
+            <h1>How Can We Help You?</h1>
+            <p>Get instant answers with UB Assistant or connect with our team directly</p>
+            <div class="breadcrumb">
+                <a href="index.html"><i class='bx bx-home'></i> Home</a>
+                <i class='bx bx-chevron-right'></i>
+                <span>Support</span>
+            </div>
+        </div>
+    </section>
+
+ 
+
+    <!-- ============================================
+         UB ASSISTANT CHATBOT
+    ============================================= -->
+    <section class="chatbot-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">🤖 UB Assistant</h2>
+                <p class="section-subtitle">Ask me anything! I'm here to help you 24/7 with instant answers</p>
+            </div>
+
+            <div class="chatbot-container" data-aos="fade-up" data-aos-delay="200">
+                <!-- Chatbot Header -->
+                <div class="chatbot-header">
+                    <div class="bot-avatar">🤖</div>
+                    <div class="bot-info">
+                        <h3>UB Assistant</h3>
+                        <div class="bot-status">
+                            <span class="status-indicator"></span>
+                            <span>Online - Ready to help!</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chat Messages -->
+                <div class="chat-messages" id="chatMessages">
+                    <!-- Welcome Message -->
+                    <div class="message bot">
+                        <div class="message-avatar">🤖</div>
+                        <div class="message-content">
+                            <div class="message-bubble">
+                                <strong>Hi! I'm UB Assistant 👋</strong><br><br>
+                                I can help you with:<br>
+                                • Course information<br>
+                                • Admission details<br>
+                                • Fees & payment<br>
+                                • Placement support<br>
+                                • Institute location<br><br>
+                                How can I help you today?
+                            </div>
+                            <div class="quick-replies">
+                                <button class="quick-reply-btn" onclick="sendQuickReply('courses')">📚 View Courses</button>
+                                <button class="quick-reply-btn" onclick="sendQuickReply('admission')">🎓 Admission Process</button>
+                                <button class="quick-reply-btn" onclick="sendQuickReply('fees')">💰 Fee Structure</button>
+                                <button class="quick-reply-btn" onclick="sendQuickReply('location')">📍 Location</button>
+                            </div>
+                            <div class="message-time">Just now</div>
+                        </div>
+                    </div>
+
+                    <!-- Typing Indicator -->
+                    <div class="message bot">
+                        <div class="message-avatar">🤖</div>
+                        <div class="typing-indicator" id="typingIndicator">
+                            <div class="typing-dots">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chat Input -->
+                <div class="chat-input">
+                    <input type="text" id="userInput" placeholder="Type your question here..." autocomplete="off">
+                    <button class="send-btn" onclick="sendMessage()">
+                        <i class='bx bx-send'></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+   <!-- ============================================
+         QUICK CONTACT CARDS
+    ============================================= -->
+    <section class="quick-contact">
+        <div class="container">
+            <div class="contact-grid">
+                
+                <!-- Phone Card -->
+                <div class="contact-card phone" data-aos="fade-up" data-aos-delay="100">
+                    <div class="contact-icon">
+                        <i class='bx bx-phone-call'></i>
+                    </div>
+                    <h3>Call Us</h3>
+                    <p>Mon-Sat: 9 AM - 7 PM</p>
+                    <a href="tel:+916205119312" class="contact-btn">
+                        <i class='bx bx-phone'></i> +91 6205 119 312
+                    </a>
+                </div>
+
+                <!-- WhatsApp Card -->
+                <div class="contact-card whatsapp" data-aos="fade-up" data-aos-delay="200">
+                    <div class="contact-icon">
+                        <i class='bx bxl-whatsapp'></i>
+                    </div>
+                    <h3>WhatsApp</h3>
+                    <p>Get instant response</p>
+                    <a href="https://wa.me/916205119312?text=Hi%2C%20I%20need%20help" target="_blank" class="contact-btn">
+                        <i class='bx bxl-whatsapp'></i> Chat Now
+                    </a>
+                </div>
+
+                <!-- Instagram Card -->
+                <div class="contact-card instagram" data-aos="fade-up" data-aos-delay="300">
+                    <div class="contact-icon">
+                        <i class='bx bxl-instagram'></i>
+                    </div>
+                    <h3>Instagram</h3>
+                    <p>Follow us for updates</p>
+                    <a href="https://www.instagram.com/ub_institute_training?igsh=MTFsY2puenk3eTUzbA==" target="_blank" class="contact-btn">
+                        <i class='bx bxl-instagram'></i> Follow
+                    </a>
+                </div>
+
+                <!-- Facebook Card -->
+                <div class="contact-card facebook" data-aos="fade-up" data-aos-delay="100">
+                    <div class="contact-icon">
+                        <i class='bx bxl-facebook'></i>
+                    </div>
+                    <h3>Facebook</h3>
+                    <p>Join our community</p>
+                    <a href="https://www.facebook.com/profile.php?id=61573524307886" target="_blank" class="contact-btn">
+                        <i class='bx bxl-facebook'></i> Like Page
+                    </a>
+                </div>
+
+                <!-- YouTube Card -->
+                <div class="contact-card youtube" data-aos="fade-up" data-aos-delay="200">
+                    <div class="contact-icon">
+                        <i class='bx bxl-youtube'></i>
+                    </div>
+                    <h3>YouTube</h3>
+                    <p>Watch tutorials & tips</p>
+                    <a href="https://youtube.com/@ubpoints?si=iM1HAKkH_yBt6VBW" target="_blank" class="contact-btn">
+                        <i class='bx bxl-youtube'></i> Subscribe
+                    </a>
+                </div>
+
+                <!-- Google Form Card -->
+                <div class="contact-card form" data-aos="fade-up" data-aos-delay="300">
+                    <div class="contact-icon">
+                        <i class='bx bx-edit'></i>
+                    </div>
+                    <h3>Send Query</h3>
+                    <p>Fill detailed form</p>
+                    <a href="https://forms.gle/MnRX12A92f1TVErW9" target="_blank" class="contact-btn">
+                        <i class='bx bx-send'></i> Fill Form
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- ============================================
+         TEAM SECTION
+    ============================================= -->
+    <section class="team-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Our Team</h2>
+                <p class="section-subtitle">Meet the dedicated team behind UB Institute & Training</p>
+            </div>
+
+            <div class="team-grid">
+                
+                <!-- Founder -->
+                <div class="team-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="team-image">F</div>
+                    <div class="team-info">
+                        <h3 class="team-name">Mr. Uday Bhushan</h3>
+                        <p class="team-role">Founder & CEO</p>
+                        <div class="team-contact">
+                            <a href="tel:+916205119312"><i class='bx bx-phone'></i> +91 6205 119 312</a>
+                            <a href="mailto:ubcenters@gmail.com"><i class='bx bx-envelope'></i> ubcenters@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Director -->
+                <div class="team-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="team-image">D</div>
+                    <div class="team-info">
+                        <h3 class="team-name">Director</h3>
+                        <p class="team-role">Academic Director</p>
+                        <div class="team-contact">
+                            <a href="tel:+916205119312"><i class='bx bx-phone'></i> +91 6205 119 312</a>
+                            <a href="mailto:ubcenters@gmail.com"><i class='bx bx-envelope'></i> ubcenters@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Developer -->
+                <div class="team-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="team-image">A</div>
+                    <div class="team-info">
+                        <h3 class="team-name">Abhishek Kumar</h3>
+                        <p class="team-role">Lead Developer</p>
+                        <div class="team-contact">
+                            <a href="https://i-m-er-abhi.vercel.app" target="_blank"><i class='bx bx-globe'></i> Portfolio Website</a>
+                            <a href="mailto:developer@ubinstitute.com"><i class='bx bx-envelope'></i> Contact Developer</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Support Team -->
+                <div class="team-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="team-image">S</div>
+                    <div class="team-info">
+                        <h3 class="team-name">Support Team</h3>
+                        <p class="team-role">Student Support</p>
+                        <div class="team-contact">
+                            <a href="https://wa.me/916205119312"><i class='bx bxl-whatsapp'></i> WhatsApp Support</a>
+                            <a href="mailto:ubcenters@gmail.com"><i class='bx bx-envelope'></i> Email Support</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         FAQ SECTION
+    ============================================= -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-subtitle">Quick answers to common questions</p>
+            </div>
+
+            <div class="faq-container">
+                
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h4>What are the admission requirements?</h4>
+                        <div class="faq-icon"><i class='bx bx-plus'></i></div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Basic computer courses require 10th pass, while advanced courses may require 12th or graduation. Age limit is 16+ years. No prior technical knowledge required for beginner courses.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h4>Do you provide placement assistance?</h4>
+                        <div class="faq-icon"><i class='bx bx-plus'></i></div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Yes! We provide 100% placement assistance including resume building, interview preparation, mock interviews, and direct company connections with 100+ partner companies.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h4>What is the fee structure?</h4>
+                        <div class="faq-icon"><i class='bx bx-plus'></i></div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Fees vary by course from ₹3,000 to ₹25,000. We offer flexible EMI options, early bird discounts, and special offers. Contact us for detailed fee structure.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="400">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h4>Are certificates provided?</h4>
+                        <div class="faq-icon"><i class='bx bx-plus'></i></div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Yes, we provide industry-recognized certificates upon course completion. We also help you obtain government and international certifications like Google, Microsoft, etc.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="500">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h4>What are the batch timings?</h4>
+                        <div class="faq-icon"><i class='bx bx-plus'></i></div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            We offer flexible timings: Morning (9 AM - 12 PM), Afternoon (12 PM - 3 PM), Evening (4 PM - 7 PM), and Weekend batches (Saturday-Sunday). You can choose as per your convenience.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         FOOTER
+    ============================================= -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="footer-logo">
+                        <img src="image\logo-wb.png" alt="UB Institute Logo">
+                    </a>
+                    <p class="footer-description">
+                        UB Institute & Training is a premier career education center offering expert-led training with 100% placement assistance.
+                    </p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/profile.php?id=61573524307886" target="_blank"><i class='bx bxl-facebook'></i></a>
+                        <a href="https://www.instagram.com/ub_institute_training?igsh=MTFsY2puenk3eTUzbA==" target="_blank"><i class='bx bxl-instagram'></i></a>
+                        <a href="https://youtube.com/@ubpoints?si=iM1HAKkH_yBt6VBW" target="_blank"><i class='bx bxl-youtube'></i></a>
+                        <a href="https://pin.it/48H7IHjPy" target="_blank"><i class='bx bxl-twitter'></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class='bx bx-chevron-right'></i> Home</a></li>
+                        <li><a href="about.html"><i class='bx bx-chevron-right'></i> About Us</a></li>
+                        <li><a href="courses.html"><i class='bx bx-chevron-right'></i> Courses</a></li>
+                        <li><a href="admission.html"><i class='bx bx-chevron-right'></i> Admission</a></li>
+                        <li><a href="placement.html"><i class='bx bx-chevron-right'></i> Placement</a></li>
+                        <li><a href="blog.html"><i class='bx bx-chevron-right'></i> Blog</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-title">Our Courses</h4>
+                    <ul class="footer-links">
+                        <li><a href="courses.html"><i class='bx bx-chevron-right'></i> Digital Marketing</a></li>
+                        <li><a href="courses.html"><i class='bx bx-chevron-right'></i> Web Development</a></li>
+                        <li><a href="courses.html"><i class='bx bx-chevron-right'></i> Graphic Design</a></li>
+                        <li><a href="courses.html"><i class='bx bx-chevron-right'></i> Tally with GST</a></li>
+                        <li><a href="courses.html"><i class='bx bx-chevron-right'></i> Computer Courses</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-title">Contact Info</h4>
+                    <ul class="footer-contact-list">
+                        <li>
+                            <i class='bx bxs-map'></i>
+                            <span>Charka Pathar, Randhiya Road<br>Saraiyahat, Dumka, Jharkhand - 814150</span>
+                        </li>
+                        <li>
+                            <i class='bx bxs-phone-call'></i>
+                            <span><a href="tel:+916205119312">+91 6205 119 312</a></span>
+                        </li>
+                        <li>
+                            <i class='bx bxl-whatsapp'></i>
+                            <span><a href="https://wa.me/916205119312">WhatsApp Us</a></span>
+                        </li>
+                        <li>
+                            <i class='bx bxs-envelope'></i>
+                            <span><a href="mailto:UBCENTERS@GMAIL.COM">UBCENTERS@GMAIL.COM</a></span>
+                        </li>
+                    </ul>
+
+                    <div class="payment-methods">
+                        <p>We Accept:</p>
+                        <div class="payment-icons">
+                            <img src="https://via.placeholder.com/40x25/FFFFFF/1E3A8A?text=UPI" alt="UPI">
+                            <img src="https://via.placeholder.com/40x25/FFFFFF/1E3A8A?text=GPay" alt="Google Pay">
+                            <img src="https://via.placeholder.com/40x25/FFFFFF/1E3A8A?text=PhonePe" alt="PhonePe">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-content">
+                    <p class="copyright">© <span id="currentYear">2024</span> UB Institute & Training. All Rights Reserved.</p>
+                    <p class="designer-credit">Designed with <span class="heart">❤️</span> by <a href="https://i-m-er-abhi.vercel.app" target="_blank">ABHISHEK KUMAR</a></p>
+                    <div class="footer-bottom-links">
+                        <a href="privacy-policy.html">Privacy Policy</a>
+                        <span class="separator">|</span>
+                        <a href="terms.html">Terms & Conditions</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top -->
+    <div class="scroll-top" id="scrollTop">
+        <i class='bx bx-up-arrow-alt'></i>
+    </div>
+
+    <!-- AOS Animation JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            offset: 100
+        });
+
+        // Update current year
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Scroll to Top
+        const scrollTopBtn = document.getElementById('scrollTop');
+        window.addEventListener('scroll', () => {
+            scrollTopBtn.classList.toggle('active', window.pageYOffset > 300);
+        });
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // ============================================
+        // CHATBOT FUNCTIONALITY
+        // ============================================
+
+        const chatMessages = document.getElementById('chatMessages');
+        const userInput = document.getElementById('userInput');
+        const typingIndicator = document.getElementById('typingIndicator');
+
+        // Knowledge Base - Add all your institute information here
+        const knowledgeBase = {
+            // Greetings
+            'hi': 'Hello! 👋 Welcome to UB Institute & Training! How can I help you today?',
+            'hello': 'Hi there! 😊 I\'m UB Assistant. What would you like to know?',
+            'hey': 'Hey! Great to see you! How can I assist you?',
+            
+            // Courses
+            'courses': 'We offer:\n\n📚 Digital Marketing\n💻 Computer Courses (DCA, ADCA)\n🌐 Web Development\n🎨 Graphic Design\n💰 Tally with GST\n📝 Data Entry\n🐍 Python Programming\n☕ Java Programming\n\nWhich course interests you?',
+            'digital marketing': 'Our Digital Marketing course covers:\n• SEO & SEM\n• Social Media Marketing\n• Content Marketing\n• Email Marketing\n• Google Ads & Analytics\n• Facebook Ads\n\nDuration: 3-6 months\nWould you like to know the fees?',
+            'web development': 'Web Development course includes:\n• HTML, CSS, JavaScript\n• React.js\n• Node.js\n• MongoDB\n• Full Stack Projects\n\nDuration: 6 months\nCertificate provided!',
+            'tally': 'Tally with GST course:\n• Basic to Advanced Tally\n• GST Filing\n• Inventory Management\n• Payroll\n• TDS\n\nDuration: 3 months\nPerfect for accounting jobs!',
+            
+            // Admission
+            'admission': 'Admission Process:\n\n1️⃣ Fill admission form\n2️⃣ Submit documents\n3️⃣ Fee payment\n4️⃣ Batch allocation\n5️⃣ Start learning!\n\nAdmissions are OPEN for 2024-25!\nWant to apply now?',
+            'admission process': 'Visit our Admission page or fill this form: https://forms.gle/MnRX12A92f1TVErW9\n\nOr contact us:\n📞 +91 6205 119 312\n💬 WhatsApp: wa.me/916205119312',
+            'apply': 'Great! You can apply through:\n\n1. Google Form: https://forms.gle/MnRX12A92f1TVErW9\n2. WhatsApp: wa.me/916205119312\n3. Visit us directly\n\nNeed help filling the form?',
+            
+            // Fees
+            'fees': 'Fee Structure:\n\n📚 Basic Courses: ₹3,000 - ₹8,000\n💻 Professional Courses: ₹10,000 - ₹15,000\n🎓 Advanced Courses: ₹15,000 - ₹25,000\n\n✅ EMI Available\n✅ Scholarships for meritorious students\n✅ Group discounts\n\nWhich course fee do you want to know?',
+            'fee structure': 'We offer flexible payment options:\n• One-time payment (5% discount)\n• Monthly EMI\n• Quarterly payment\n\nContact for exact fees: +91 6205 119 312',
+            'emi': 'Yes! EMI facility available:\n• 0% interest on 3 months\n• Low interest on 6-12 months\n• No hidden charges\n\nContact us for EMI details!',
+            
+            // Placement
+            'placement': '🎯 100% Placement Assistance!\n\nWe provide:\n✅ Resume Building\n✅ Interview Preparation\n✅ Mock Interviews\n✅ Job Connections\n✅ Internship Opportunities\n\nOur students placed at: TCS, Infosys, Wipro, Amazon, Flipkart & more!\n\nAverage Package: ₹3.5 - ₹5.5 LPA',
+            'job': 'Yes! We provide 100% job assistance. Our placement rate is 95%!\n\n500+ students placed in top companies.\n\nWant to see placement records?',
+            'salary': 'Average Salary Packages:\n\n• Freshers: ₹3-5 LPA\n• 1-2 years exp: ₹5-8 LPA\n• 3+ years exp: ₹8-15 LPA\n\nTop package: ₹12 LPA',
+            
+            // Location & Contact
+            'location': '📍 UB Institute & Training\n\nAddress:\nCharka Pathar, Randhiya Road\nSaraiyahat, Dumka\nJharkhand - 814150\n\n🕒 Timing: Mon-Sat, 9 AM - 7 PM\n\nNeed directions? Check Google Maps!',
+            'address': '📍 Charka Pathar, Randhiya Road, Saraiyahat, Dumka, Jharkhand - 814150\n\nLandmark: Near Randhiya Road\n\nCall for directions: +91 6205 119 312',
+            'timing': '🕒 Institute Timings:\n\nMonday - Saturday: 9:00 AM - 7:00 PM\nSunday: Closed\n\nBatch Timings:\n• Morning: 9 AM - 12 PM\n• Afternoon: 12 PM - 3 PM\n• Evening: 4 PM - 7 PM\n• Weekend: Sat-Sun',
+            'contact': '📞 Contact Us:\n\nPhone: +91 6205 119 312\nEmail: UBCENTERS@GMAIL.COM\nWhatsApp: wa.me/916205119312\n\nSocial Media:\n• Facebook\n• Instagram\n• YouTube\n\nPreferred contact method?',
+            
+            // Duration
+            'duration': 'Course Durations:\n\n• Short Courses: 3 months\n• Diploma Courses: 6 months\n• Advanced Diploma: 12 months\n• Professional Courses: 6-12 months\n\nFlexible batch timings available!',
+            
+            // Certificates
+            'certificate': 'Yes! We provide:\n\n✅ Course Completion Certificate\n✅ Industry-recognized certificates\n✅ Government approved certificates\n✅ Help with Google/Microsoft certifications\n\nCertificates are valid nationwide!',
+            
+            // Founder/Team
+            'founder': 'Our Founder:\n\n👤 Mr. Uday Bhushan\nFounder & CEO\n\n📧 ubcenters@gmail.com\n📞 +91 6205 119 312\n\nWith 10+ years in education & training!',
+            'director': 'Our Academic Director oversees:\n\n• Curriculum development\n• Quality training\n• Student progress\n• Placement activities\n\nContact: +91 6205 119 312',
+            'developer': 'Website Developer:\n\n👨‍💻 Abhishek Kumar\nLead Developer\n\n🌐 Portfolio: i-m-er-abhi.vercel.app\n\nBuilt with ❤️ for UB Institute!',
+            'team': 'Our Team:\n\n👨‍💼 Founder & CEO\n👨‍🏫 Academic Director\n👨‍💻 Lead Developer\n👥 Support Team\n👩‍🏫 Expert Trainers\n\nAll dedicated to your success!',
+            
+            // Batch
+            'batch': 'Batch Options:\n\n🌅 Morning: 9 AM - 12 PM\n🌞 Afternoon: 12 PM - 3 PM\n🌆 Evening: 4 PM - 7 PM\n📅 Weekend: Sat-Sun\n\nSmall batches (15-20 students) for personal attention!\n\nWhich timing suits you?',
+            
+            // Requirements
+            'requirements': 'Admission Requirements:\n\n• Age: 16+ years\n• Education: 10th pass (minimum)\n• No prior tech knowledge needed\n• Laptop/Computer (for practice)\n\nThat\'s it! Anyone can join!',
+            'eligibility': 'Eligibility:\n\n✅ 10th pass for basic courses\n✅ 12th pass for advanced courses\n✅ Graduation for professional courses\n\nAge: 16+ years\nNo upper age limit!',
+            
+            // Benefits
+            'benefits': 'Benefits of joining UB Institute:\n\n✨ Expert trainers\n✨ Practical training\n✨ Industry projects\n✨ 100% placement support\n✨ Flexible timings\n✨ Affordable fees\n✨ Modern infrastructure\n✨ Government recognized\n\nJoin 500+ successful students!',
+            
+            // Default
+            'default': 'I\'m not sure about that. But I can help you with:\n\n• Course information\n• Admission process\n• Fees & payment\n• Placement details\n• Location & contact\n\nOr connect directly:'
+        };
+
+        // Get current time
+        function getCurrentTime() {
+            const now = new Date();
+            return now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+        }
+
+        // Add message to chat
+        function addMessage(text, isUser = false) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${isUser ? 'user' : 'bot'}`;
+            
+            const avatar = document.createElement('div');
+            avatar.className = 'message-avatar';
+            avatar.textContent = isUser ? '👤' : '🤖';
+            
+            const content = document.createElement('div');
+            content.className = 'message-content';
+            
+            const bubble = document.createElement('div');
+            bubble.className = 'message-bubble';
+            bubble.innerHTML = text.replace(/\n/g, '<br>');
+            
+            const time = document.createElement('div');
+            time.className = 'message-time';
+            time.textContent = getCurrentTime();
+            
+            content.appendChild(bubble);
+            content.appendChild(time);
+            messageDiv.appendChild(avatar);
+            messageDiv.appendChild(content);
+            
+            // Insert before typing indicator
+            const typingMessage = typingIndicator.parentElement;
+            chatMessages.insertBefore(messageDiv, typingMessage);
+            
+            // Scroll to bottom
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        // Show typing indicator
+        function showTyping() {
+            typingIndicator.classList.add('active');
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        // Hide typing indicator
+        function hideTyping() {
+            typingIndicator.classList.remove('active');
+        }
+
+        // Find best match in knowledge base
+        function findAnswer(question) {
+            question = question.toLowerCase().trim();
+            
+            // Direct match
+            if (knowledgeBase[question]) {
+                return knowledgeBase[question];
+            }
+            
+            // Keyword matching
+            for (let key in knowledgeBase) {
+                if (question.includes(key)) {
+                    return knowledgeBase[key];
+                }
+            }
+            
+            // No match found
+            return knowledgeBase['default'];
+        }
+
+        // Send message
+        function sendMessage() {
+            const message = userInput.value.trim();
+            if (!message) return;
+            
+            // Add user message
+            addMessage(message, true);
+            userInput.value = '';
+            
+            // Show typing
+            showTyping();
+            
+            // Simulate thinking time
+            setTimeout(() => {
+                hideTyping();
+                
+                const answer = findAnswer(message);
+                addMessage(answer);
+                
+                // If default answer, show contact options
+                if (answer === knowledgeBase['default']) {
+                    setTimeout(() => {
+                        const contactOptions = `
+                            <div style="margin-top: 15px;">
+                                <a href="https://wa.me/916205119312" target="_blank" style="display: inline-block; padding: 10px 20px; background: #25D366; color: white; border-radius: 20px; margin: 5px; text-decoration: none;">
+                                    💬 WhatsApp
+                                </a>
+                                <a href="tel:+916205119312" style="display: inline-block; padding: 10px 20px; background: #003399; color: white; border-radius: 20px; margin: 5px; text-decoration: none;">
+                                    📞 Call Us
+                                </a>
+                                <a href="https://forms.gle/MnRX12A92f1TVErW9" target="_blank" style="display: inline-block; padding: 10px 20px; background: #0066cc; color: white; border-radius: 20px; margin: 5px; text-decoration: none;">
+                                    📝 Fill Form
+                                </a>
+                            </div>
+                        `;
+                        addMessage(contactOptions);
+                    }, 500);
+                }
+            }, 1000 + Math.random() * 1000);
+        }
+
+        // Send quick reply
+        function sendQuickReply(topic) {
+            userInput.value = topic;
+            sendMessage();
+        }
+
+        // Enter key to send
+        userInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+
+        // FAQ Toggle
+        function toggleFAQ(element) {
+            const faqItem = element.parentElement;
+            const allItems = document.querySelectorAll('.faq-item');
+            
+            allItems.forEach(item => {
+                if (item !== faqItem) {
+                    item.classList.remove('active');
+                }
+            });
+            
+            faqItem.classList.toggle('active');
+        }
+
+        // Console greeting
+        console.log('%c🤖 UB Assistant - Support System', 'color: #003399; font-size: 20px; font-weight: bold;');
+        console.log('%cAI-Powered Support | No API Required', 'color: #0066cc; font-size: 14px;');
+        console.log('%cDeveloped by Abhishek Kumar', 'color: #666; font-size: 12px;');
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,1932 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog Post - UB Institute & Training</title>
+    <meta
+      name="description"
+      content="Read full blog articles from UB Institute & Training"
+    />
+
+    <!-- Boxicons CSS -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* ============================================
+           GLOBAL STYLES
+        ============================================= */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+  /* BRAND COLORS */
+  --primary-color: #F36B21;      /* Orange */
+  --secondary-color: #F9A825;    /* Yellow */
+  --accent-color: #0B3C5D;       /* Deep Blue */
+
+  /* TEXT COLORS */
+  --text-dark: #1a1a1a;
+  --text-light: #666;
+
+  /* BACKGROUND */
+  --bg-light: #FFF8F0;
+  --white: #ffffff;
+
+  /* UI */
+  --border-color: #e0e0e0;
+  --success-color: #43A047;
+}
+
+
+      body {
+        font-family: "Poppins", sans-serif;
+        line-height: 1.6;
+        color: var(--text-dark);
+        background: var(--bg-light);
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* ============================================
+           HEADER
+        ============================================= */
+      .header {
+        background: linear-gradient(
+          135deg,
+          var(--primary-color),
+          var(--secondary-color)
+        );
+        color: var(--white);
+        padding: 20px 0;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        text-decoration: none;
+        color: var(--white);
+      }
+
+      .logo img {
+        width: 60px;
+        height: 60px;
+        border-radius: 10px;
+        border: 2px solid var(--white);
+      }
+
+      .logo-text h1 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin: 0;
+      }
+
+      .logo-text p {
+        font-size: 0.85rem;
+        opacity: 0.9;
+        margin: 0;
+      }
+
+      .back-button {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: rgba(255, 255, 255, 0.2);
+        color: var(--white);
+        padding: 10px 25px;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.3s ease;
+      }
+
+      .back-button:hover {
+        background: var(--white);
+        color: var(--primary-color);
+        transform: translateX(-5px);
+      }
+
+      /* ============================================
+           BLOG DETAIL CONTENT
+        ============================================= */
+      .blog-detail-section {
+        padding: 60px 0;
+      }
+
+      .blog-detail-container {
+        max-width: 900px;
+        margin: 0 auto;
+        background: var(--white);
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        min-height: 400px; /* Min height to prevent collapse */
+      }
+
+      .blog-detail-header {
+        position: relative;
+        height: 500px;
+        overflow: hidden;
+      }
+
+      .blog-detail-header img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .blog-detail-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+        padding: 40px;
+        color: var(--white);
+      }
+
+      .blog-category-badge {
+        display: inline-block;
+        background: var(--primary-color);
+        color: var(--white);
+        padding: 8px 20px;
+        border-radius: 30px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        margin-bottom: 15px;
+      }
+
+      .blog-detail-title {
+        font-size: 2.5rem;
+        font-weight: 800;
+        margin-bottom: 20px;
+        line-height: 1.2;
+      }
+
+      .blog-detail-meta {
+        display: flex;
+        gap: 30px;
+        flex-wrap: wrap;
+      }
+
+      .meta-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 0.95rem;
+      }
+
+      .blog-detail-content {
+        padding: 50px 60px;
+      }
+
+      .blog-detail-content h2 {
+        color: var(--primary-color);
+        font-size: 2rem;
+        margin: 40px 0 20px;
+        padding-bottom: 15px;
+        border-bottom: 3px solid var(--border-color);
+        position: relative;
+      }
+
+      .blog-detail-content h2::after {
+        content: "";
+        position: absolute;
+        bottom: -3px;
+        left: 0;
+        width: 100px;
+        height: 3px;
+        background: var(--primary-color);
+      }
+
+      .blog-detail-content h3 {
+        color: var(--secondary-color);
+        font-size: 1.5rem;
+        margin: 30px 0 15px;
+      }
+
+      .blog-detail-content p {
+        color: var(--text-light);
+        font-size: 1.1rem;
+        line-height: 1.9;
+        margin-bottom: 20px;
+      }
+
+      .blog-detail-content ul,
+      .blog-detail-content ol {
+        margin: 20px 0;
+        padding-left: 30px;
+      }
+
+      .blog-detail-content li {
+        color: var(--text-light);
+        font-size: 1.05rem;
+        line-height: 1.8;
+        margin-bottom: 12px;
+      }
+
+      .blog-detail-content li strong {
+        color: var(--primary-color);
+        font-weight: 600;
+      }
+
+      .highlight-box {
+        background: linear-gradient(
+          135deg,
+          rgba(0, 51, 153, 0.05),
+          rgba(0, 102, 204, 0.05)
+        );
+        border-left: 4px solid var(--primary-color);
+        padding: 25px 30px;
+        margin: 30px 0;
+        border-radius: 10px;
+      }
+
+      .highlight-box h4 {
+        color: var(--primary-color);
+        margin-bottom: 15px;
+        font-size: 1.3rem;
+      }
+
+      .highlight-box ul {
+        margin: 0;
+      }
+
+      .quote-box {
+        background: var(--primary-color);
+        color: var(--white);
+        padding: 30px;
+        border-radius: 15px;
+        margin: 30px 0;
+        text-align: center;
+        font-size: 1.3rem;
+        font-style: italic;
+        box-shadow: 0 5px 20px rgba(0, 51, 153, 0.2);
+      }
+
+      .author-box {
+        background: var(--bg-light);
+        padding: 30px;
+        border-radius: 15px;
+        margin-top: 50px;
+        display: flex;
+        gap: 25px;
+        align-items: center;
+      }
+
+      .author-avatar {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background: var(--primary-color);
+        color: var(--white);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        font-weight: 700;
+        flex-shrink: 0;
+      }
+
+      .author-info h4 {
+        color: var(--primary-color);
+        margin-bottom: 8px;
+        font-size: 1.3rem;
+      }
+
+      .author-info p {
+        color: var(--text-light);
+        font-size: 0.95rem;
+        margin: 0;
+      }
+
+      .share-section {
+        border-top: 2px solid var(--border-color);
+        padding-top: 30px;
+        margin-top: 40px;
+        text-align: center;
+      }
+
+      .share-section h3 {
+        color: var(--primary-color);
+        margin-bottom: 20px;
+      }
+
+      .share-buttons {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .share-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 25px;
+        border-radius: 30px;
+        text-decoration: none;
+        color: var(--white);
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+
+      .share-btn.facebook {
+        background: #1877f2;
+      }
+      .share-btn.twitter {
+        background: #1da1f2;
+      }
+      .share-btn.whatsapp {
+        background: #25d366;
+      }
+      .share-btn.linkedin {
+        background: #0077b5;
+      }
+
+      .share-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      }
+
+      /* ============================================
+           RELATED POSTS
+        ============================================= */
+      .related-posts {
+        padding: 60px 0;
+        background: var(--white);
+      }
+
+      .related-posts h2 {
+        text-align: center;
+        color: var(--primary-color);
+        font-size: 2.5rem;
+        margin-bottom: 50px;
+      }
+
+      .related-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+      }
+
+      .related-card {
+        background: var(--white);
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+      }
+
+      .related-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 40px rgba(0, 51, 153, 0.15);
+      }
+
+      .related-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+
+      .related-card-content {
+        padding: 25px;
+      }
+
+      .related-card h3 {
+        color: var(--primary-color);
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+      }
+
+      .related-card p {
+        color: var(--text-light);
+        font-size: 0.95rem;
+        margin-bottom: 15px;
+      }
+
+      .related-card a {
+        color: var(--primary-color);
+        text-decoration: none;
+        font-weight: 600;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      /* ============================================
+           FOOTER
+        ============================================= */
+      .footer {
+        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        color: var(--white);
+        padding-top: 60px;
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1.5fr;
+        gap: 40px;
+        margin-bottom: 40px;
+      }
+
+      .footer-logo img {
+        width: 100px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+      }
+
+      .footer-description {
+        color: rgba(255, 255, 255, 0.8);
+        line-height: 1.8;
+        margin-bottom: 20px;
+      }
+
+      .footer-social {
+        display: flex;
+        gap: 15px;
+      }
+
+      .footer-social a {
+        width: 40px;
+        height: 40px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--white);
+        font-size: 1.2rem;
+        transition: all 0.3s ease;
+      }
+
+      .footer-social a:hover {
+        background: var(--primary-color);
+        transform: translateY(-5px);
+      }
+
+      .footer-title {
+        font-size: 1.3rem;
+        margin-bottom: 25px;
+        font-weight: 600;
+      }
+
+      .footer-links {
+        list-style: none;
+      }
+
+      .footer-links li {
+        margin-bottom: 12px;
+      }
+
+      .footer-links a {
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .footer-links a:hover {
+        color: var(--white);
+        padding-left: 10px;
+      }
+
+      .footer-contact-list {
+        list-style: none;
+      }
+
+      .footer-contact-list li {
+        display: flex;
+        gap: 15px;
+        margin-bottom: 20px;
+        color: rgba(255, 255, 255, 0.8);
+      }
+
+      .footer-contact-list i {
+        color: var(--primary-color);
+        font-size: 1.2rem;
+        flex-shrink: 0;
+        margin-top: 3px;
+      }
+
+      .footer-contact-list a {
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .footer-contact-list a:hover {
+        color: var(--white);
+      }
+
+      .payment-methods {
+        margin-top: 20px;
+      }
+
+      .payment-methods p {
+        margin-bottom: 10px;
+        font-weight: 500;
+      }
+
+      .payment-icons {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+
+      .payment-icons img {
+        height: 25px;
+        border-radius: 4px;
+      }
+
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 25px 0;
+      }
+
+      .footer-bottom-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+
+      .copyright,
+      .designer-credit {
+        color: rgba(255, 255, 255, 0.7);
+        margin: 0;
+      }
+
+      .heart {
+        color: #ff6b6b;
+        animation: heartbeat 1.5s ease infinite;
+      }
+
+      @keyframes heartbeat {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.1);
+        }
+      }
+
+      .designer-credit a {
+        color: var(--primary-color);
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      .footer-bottom-links {
+        display: flex;
+        gap: 15px;
+        align-items: center;
+      }
+
+      .footer-bottom-links a {
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+      }
+
+      .footer-bottom-links a:hover {
+        color: var(--white);
+      }
+
+      .separator {
+        color: rgba(255, 255, 255, 0.3);
+      }
+
+      /* ============================================
+           RESPONSIVE
+        ============================================= */
+      @media (max-width: 768px) {
+        .blog-detail-title {
+          font-size: 2rem;
+        }
+
+        .blog-detail-content {
+          padding: 30px 25px;
+        }
+
+        .blog-detail-content h2 {
+          font-size: 1.6rem;
+        }
+
+        .blog-detail-header {
+          height: 300px;
+        }
+
+        .author-box {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .footer-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .footer-bottom-content {
+          flex-direction: column;
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ============================================
+         HEADER
+    ============================================= -->
+    <header class="header">
+      <div class="container">
+        <nav class="navbar">
+          <a href="index.html" class="logo">
+            <img
+              src="image\logo-wb.png"
+              alt="UB Institute Logo"
+            />
+          </a>
+          <a href="blog.html" class="back-button">
+            <i class="bx bx-arrow-back"></i> Back to Blog
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- ============================================
+         BLOG DETAIL CONTENT (Dynamic)
+    ============================================= -->
+    <section class="blog-detail-section">
+      <div class="container">
+        <div class="blog-detail-container" id="blogContent">
+          <!-- Content will be loaded here by JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         RELATED POSTS
+    ============================================= -->
+    <section class="related-posts">
+      <div class="container">
+        <h2>Related Articles</h2>
+        <div class="related-grid" id="relatedPosts">
+          <!-- Related posts will be loaded here -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         FOOTER
+    ============================================= -->
+    <footer class="footer" id="footer">
+      <div class="footer-main">
+        <div class="container">
+          <div class="footer-grid">
+            <div class="footer-col footer-about">
+              <a href="index.html" class="footer-logo">
+                <img
+                  src="image\logo-wb.png"
+                  alt="UB Institute Logo"
+                />
+              </a>
+              <p class="footer-description">
+                UB Institute & Training is a premier career education center
+                offering expert-led training in Digital Marketing, Computer
+                Studies, and Vocational Courses with 100% placement assistance.
+              </p>
+              <div class="footer-social">
+                <a
+                  href="https://www.facebook.com/profile.php?id=61573524307886"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="Facebook"
+                >
+                  <i class="bx bxl-facebook"></i>
+                </a>
+                <a
+                  href="https://www.instagram.com/ub_institute_training?igsh=MTFsY2puenk3eTUzbA=="
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="Instagram"
+                >
+                  <i class="bx bxl-instagram"></i>
+                </a>
+                <a
+                  href="https://youtube.com/@ubpoints?si=iM1HAKkH_yBt6VBW"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="YouTube"
+                >
+                  <i class="bx bxl-youtube"></i>
+                </a>
+                <a
+                  href="https://www.instagram.com/ub_institute_training?igsh=MTFsY2puenk3eTUzbA=="
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="LinkedIn"
+                >
+                  <i class="bx bxl-linkedin"></i>
+                </a>
+                <a
+                  href="https://pin.it/48H7IHjPy"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="Twitter"
+                >
+                  <i class="bx bxl-twitter"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="footer-col">
+              <h4 class="footer-title">Quick Links</h4>
+              <ul class="footer-links">
+                <li>
+                  <a href="index.html"
+                    ><i class="bx bx-chevron-right"></i> Home</a
+                  >
+                </li>
+                <li>
+                  <a href="about.html"
+                    ><i class="bx bx-chevron-right"></i> About Us</a
+                  >
+                </li>
+                <li>
+                  <a href="services.html"
+                    ><i class="bx bx-chevron-right"></i> Our Services</a
+                  >
+                </li>
+                 <li>
+                  <a href="support.html"
+                    ><i class="bx bx-chevron-right"></i> support</a
+                  >
+                </li>
+                <li>
+                  <a href="courses.html"
+                    ><i class="bx bx-chevron-right"></i> All Courses</a
+                  >
+                </li>
+                <li>
+                  <a href="gallery.html"
+                    ><i class="bx bx-chevron-right"></i> Gallery</a
+                  >
+                </li>
+                <li>
+                  <a href="blog.html"
+                    ><i class="bx bx-chevron-right"></i> Blog</a
+                  >
+                </li>
+                <li>
+                  <a href="contact.html"
+                    ><i class="bx bx-chevron-right"></i> Contact Us</a
+                  >
+                </li>
+                <li>
+                  <a href="faq.html"
+                    ><i class="bx bx-chevron-right"></i> FAQs</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div class="footer-col">
+              <h4 class="footer-title">Our Courses</h4>
+              <ul class="footer-links">
+                <li>
+                  <a href="digital-marketing.html"
+                    ><i class="bx bx-chevron-right"></i> Digital Marketing</a
+                  >
+                </li>
+                <li>
+                  <a href="computer-courses.html"
+                    ><i class="bx bx-chevron-right"></i> Computer Courses</a
+                  >
+                </li>
+                <li>
+                  <a href="vocational-courses.html"
+                    ><i class="bx bx-chevron-right"></i> Vocational Training</a
+                  >
+                </li>
+                <li>
+                  <a href="course-detail.html?course=web-development"
+                    ><i class="bx bx-chevron-right"></i> Web Development</a
+                  >
+                </li>
+                <li>
+                  <a href="course-detail.html?course=tally-gst"
+                    ><i class="bx bx-chevron-right"></i> Tally with GST</a
+                  >
+                </li>
+                <li>
+                  <a href="course-detail.html?course=graphic-design"
+                    ><i class="bx bx-chevron-right"></i> Graphic Design</a
+                  >
+                </li>
+                <li>
+                  <a href="courses.html"
+                    ><i class="bx bx-chevron-right"></i> View All Courses →</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div class="footer-col footer-contact">
+              <h4 class="footer-title">Contact Info</h4>
+              <ul class="footer-contact-list">
+                <li>
+                  <i class="bx bxs-map"></i>
+                  <span
+                    >Charka Pathar, Randhiya Road<br />Saraiyahat, Dumka,
+                    Jharkhand - 814150</span
+                  >
+                </li>
+                <li>
+                  <i class="bx bxs-phone-call"></i>
+                  <span><a href="tel:+916205119312">+91 6205 119 312</a></span>
+                </li>
+                <li>
+                  <i class="bx bxl-whatsapp"></i>
+                  <span
+                    ><a href="https://wa.me/916205119312">WhatsApp Us</a></span
+                  >
+                </li>
+                <li>
+                  <i class="bx bxs-envelope"></i>
+                  <span
+                    ><a href="mailto:UBCENTERS@GMAIL.COM"
+                      >UBCENTERS@GMAIL.COM</a
+                    ></span
+                  >
+                </li>
+                <li>
+                  <i class="bx bxs-time"></i>
+                  <span> Mon - Sat: 9:00 AM - 7:00 PM </span>
+                </li>
+              </ul>
+
+              <div class="payment-methods">
+                <p>We Accept:</p>
+                <div class="payment-icons">
+                  <img
+                    src="https://via.placeholder.com/40x25/FFFFFF/1E3A8A?text=UPI"
+                    alt="UPI"
+                  />
+                  <img
+                    src="https://via.placeholder.com/40x25/FFFFFF/1E3A8A?text=GPay"
+                    alt="Google Pay"
+                  />
+                  <img
+                    src="https://via.placeholder.com/40x25/FFFFFF/1E3A8A?text=PhonePe"
+                    alt="PhonePe"
+                  />
+                  <img
+                    src="https://via.placeholder.com/40x25/FFFFFF/1E3A8A?text=Razorpay"
+                    alt="Razorpay"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="container">
+          <div class="footer-bottom-content">
+            <p class="copyright">
+              © <span id="currentYear">2024</span> UB Institute & Training. All
+              Rights Reserved.
+            </p>
+            <p class="designer-credit">
+              Designed with <span class="heart">❤️</span> by
+              <a href="https://i-m-er-abhi.vercel.app" target="_blank"
+                >ABHISHEK KUMAR</a
+              >
+            </p>
+            <div class="footer-bottom-links">
+              <a href="privacy-policy.html">Privacy Policy</a>
+              <span class="separator">|</span>
+              <a href="terms.html">Terms & Conditions</a>
+              <span class="separator">|</span>
+              <a href="refund-policy.html">Refund Policy</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ============================================
+         JAVASCRIPT - Dynamic Content Loading
+    ============================================= -->
+    <script>
+      // Blog Posts Database
+      const blogPosts = {
+        "digital-marketing-skills": {
+          title: "Top 10 Digital Marketing Skills Employers Want in 2024",
+          category: "Digital Marketing",
+          date: "January 15, 2024",
+          readTime: "5 min read",
+          author: "UB Institute Team",
+          image:
+            "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200",
+          excerpt:
+            "Discover the most in-demand digital marketing skills that can help you land your dream job this year.",
+          content: `
+                    <p>The digital marketing landscape is evolving rapidly, and employers are seeking professionals with specific, cutting-edge skills. Whether you're a fresher or looking to upskill, understanding what employers want is crucial for your career growth.</p>
+
+                    <h2>Why Digital Marketing Skills Matter in 2024</h2>
+                    <p>Digital marketing has become the backbone of modern business strategy. With over 5 billion internet users worldwide and businesses increasingly moving online, the demand for skilled digital marketers has never been higher. Companies are willing to invest heavily in professionals who can drive measurable results through digital channels.</p>
+
+                    <h2>Top 10 In-Demand Digital Marketing Skills</h2>
+
+                    <h3>1. Search Engine Optimization (SEO)</h3>
+                    <p>SEO remains the most critical skill in digital marketing. Understanding how to optimize content for search engines, conduct keyword research, and build quality backlinks is essential. Employers value professionals who can improve organic rankings and drive sustainable traffic.</p>
+                    
+                    <div class="highlight-box">
+                        <h4>Key SEO Skills Required:</h4>
+                        <ul>
+                            <li><strong>On-page optimization:</strong> Meta tags, content structure, and internal linking</li>
+                            <li><strong>Technical SEO:</strong> Site speed, mobile optimization, and structured data</li>
+                            <li><strong>Off-page SEO:</strong> Link building and authority development</li>
+                            <li><strong>Analytics:</strong> Google Analytics, Search Console, and ranking tools</li>
+                        </ul>
+                    </div>
+
+                    <h3>2. Content Marketing & Copywriting</h3>
+                    <p>Content is still king in 2024. The ability to create compelling, value-driven content that resonates with target audiences is highly sought after. This includes blog writing, video scripts, social media posts, and email campaigns.</p>
+
+                    <h3>3. Social Media Marketing</h3>
+                    <p>Social media platforms continue to dominate online engagement. Employers need professionals who understand platform algorithms, can create engaging content, run paid campaigns, and build communities. Knowledge of Instagram, Facebook, LinkedIn, Twitter, and emerging platforms like TikTok is crucial.</p>
+
+                    <h3>4. Pay-Per-Click (PPC) Advertising</h3>
+                    <p>Expertise in Google Ads, Facebook Ads, and other PPC platforms is extremely valuable. Employers want marketers who can manage budgets effectively, optimize campaigns for better ROI, and understand conversion tracking.</p>
+
+                    <div class="quote-box">
+                        "The best marketing doesn't feel like marketing." - Tom Fishburne
+                    </div>
+
+                    <h3>5. Data Analytics & Interpretation</h3>
+                    <p>Data-driven decision making is no longer optional. Understanding Google Analytics, creating meaningful reports, and extracting actionable insights from data sets you apart from the competition. Employers value professionals who can prove ROI through metrics.</p>
+
+                    <h3>6. Email Marketing</h3>
+                    <p>Despite being one of the oldest digital marketing channels, email marketing continues to deliver the highest ROI. Skills in email automation, segmentation, A/B testing, and personalization are highly valued.</p>
+
+                    <h3>7. Marketing Automation</h3>
+                    <p>Knowledge of marketing automation tools like HubSpot, Mailchimp, or Marketo is increasingly important. Being able to set up automated workflows, nurture campaigns, and lead scoring systems makes you invaluable to employers.</p>
+
+                    <h3>8. Video Marketing</h3>
+                    <p>Video content is experiencing explosive growth. Skills in video creation, editing, YouTube optimization, and video advertising are in high demand. Understanding platforms like YouTube, Instagram Reels, and TikTok is essential.</p>
+
+                    <h3>9. Conversion Rate Optimization (CRO)</h3>
+                    <p>The ability to improve conversion rates through testing, user experience optimization, and persuasive design is highly valued. Employers want marketers who can turn traffic into customers efficiently.</p>
+
+                    <h3>10. AI-Powered Marketing</h3>
+                    <p>Artificial Intelligence is revolutionizing digital marketing. Understanding AI tools for content creation, chatbots, predictive analytics, and personalization gives you a significant competitive advantage.</p>
+
+                    <div class="highlight-box">
+                        <h4>Emerging AI Tools for Marketers:</h4>
+                        <ul>
+                            <li><strong>ChatGPT:</strong> Content creation and customer service</li>
+                            <li><strong>Jasper AI:</strong> Marketing copy and ad creation</li>
+                            <li><strong>Midjourney:</strong> Visual content generation</li>
+                            <li><strong>Surfer SEO:</strong> AI-powered content optimization</li>
+                        </ul>
+                    </div>
+
+                    <h2>How to Develop These Skills</h2>
+                    <p>At UB Institute & Training, we offer comprehensive digital marketing courses that cover all these essential skills. Our program includes:</p>
+                    
+                    <ul>
+                        <li>Hands-on practical training with real projects</li>
+                        <li>Industry-expert instructors with years of experience</li>
+                        <li>Google and Facebook certification preparation</li>
+                        <li>100% placement assistance</li>
+                        <li>Live campaign management experience</li>
+                        <li>Portfolio building and interview preparation</li>
+                    </ul>
+
+                    <h2>Salary Expectations</h2>
+                    <p>Digital marketing professionals with these skills can expect competitive salaries:</p>
+                    <ul>
+                        <li>Entry Level (0-2 years): ₹3-5 LPA</li>
+                        <li>Mid Level (2-5 years): ₹5-10 LPA</li>
+                        <li>Senior Level (5+ years): ₹10-20 LPA</li>
+                        <li>Manager/Lead Level: ₹20-35 LPA</li>
+                    </ul>
+
+                    <h2>Conclusion</h2>
+                    <p>The digital marketing field offers tremendous opportunities for those willing to learn and adapt. By mastering these 10 skills, you'll position yourself as a valuable asset to any organization. The key is to start learning today and continuously update your knowledge as the industry evolves.</p>
+
+                    <p>Ready to start your digital marketing journey? Join UB Institute & Training and gain the skills that employers are actively seeking. Our industry-aligned curriculum and hands-on approach ensure you're job-ready from day one.</p>
+                `,
+        },
+
+        "it-job-interview": {
+          title: "How to Crack Your First IT Job Interview: Complete Guide",
+          category: "Interview Tips",
+          date: "January 10, 2024",
+          readTime: "7 min read",
+          author: "UB Institute Team",
+          image:
+            "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1200",
+          excerpt:
+            "Preparing for your first IT job interview? Here's a comprehensive guide covering technical questions, HR rounds, and common mistakes.",
+          content: `
+                    <p>Landing your first IT job can be both exciting and nerve-wracking. The interview process in the IT industry is unique, combining technical assessments, coding challenges, and behavioral evaluations. This comprehensive guide will help you prepare effectively and increase your chances of success.</p>
+
+                    <h2>Understanding the IT Interview Process</h2>
+                    <p>Most IT companies follow a multi-stage interview process. Understanding each stage helps you prepare better and manage your expectations.</p>
+
+                    <div class="highlight-box">
+                        <h4>Typical Interview Stages:</h4>
+                        <ul>
+                            <li><strong>Resume Screening:</strong> Initial filtering based on skills and experience</li>
+                            <li><strong>Online Assessment:</strong> Aptitude, logical reasoning, and coding tests</li>
+                            <li><strong>Technical Round 1:</strong> Core programming and problem-solving</li>
+                            <li><strong>Technical Round 2:</strong> Advanced concepts and system design</li>
+                            <li><strong>HR Round:</strong> Cultural fit and salary negotiation</li>
+                        </ul>
+                    </div>
+
+                    <h2>Preparation Strategy for Technical Rounds</h2>
+                    
+                    <h3>1. Master the Fundamentals</h3>
+                    <p>Strong fundamentals are crucial. Focus on these core areas:</p>
+                    <ul>
+                        <li><strong>Data Structures:</strong> Arrays, Linked Lists, Trees, Graphs, Hash Tables</li>
+                        <li><strong>Algorithms:</strong> Sorting, Searching, Dynamic Programming, Recursion</li>
+                        <li><strong>Object-Oriented Programming:</strong> Classes, Inheritance, Polymorphism, Encapsulation</li>
+                        <li><strong>Database Concepts:</strong> SQL queries, Normalization, Indexing</li>
+                        <li><strong>Operating Systems:</strong> Processes, Threads, Memory Management</li>
+                    </ul>
+
+                    <h3>2. Practice Coding Problems Daily</h3>
+                    <p>Regular practice is essential for building problem-solving skills. Use these platforms:</p>
+                    <ul>
+                        <li>LeetCode - For interview-focused problems</li>
+                        <li>HackerRank - For competitive programming</li>
+                        <li>CodeChef - For algorithm practice</li>
+                        <li>GeeksforGeeks - For concept learning and practice</li>
+                    </ul>
+
+                    <div class="quote-box">
+                        "The only way to learn programming is by writing programs." - Dennis Ritchie
+                    </div>
+
+                    <h3>3. Build Real Projects</h3>
+                    <p>Theoretical knowledge alone isn't enough. Build projects that demonstrate your skills:</p>
+                    <ul>
+                        <li>Create a portfolio website showcasing your work</li>
+                        <li>Develop a full-stack web application</li>
+                        <li>Contribute to open-source projects on GitHub</li>
+                        <li>Build mobile apps or automation scripts</li>
+                    </ul>
+
+                    <h2>Common Technical Interview Questions</h2>
+                    
+                    <h3>Programming Questions:</h3>
+                    <div class="highlight-box">
+                        <ul>
+                            <li>Reverse a linked list</li>
+                            <li>Find the longest palindrome in a string</li>
+                            <li>Implement a binary search tree</li>
+                            <li>Detect cycle in a graph</li>
+                            <li>Find the kth largest element in an array</li>
+                        </ul>
+                    </div>
+
+                    <h3>Database Questions:</h3>
+                    <ul>
+                        <li>Write a SQL query to find the second highest salary</li>
+                        <li>Explain the difference between INNER JOIN and OUTER JOIN</li>
+                        <li>What is database normalization and why is it important?</li>
+                        <li>How do you optimize slow SQL queries?</li>
+                    </ul>
+
+                    <h3>Web Development Questions:</h3>
+                    <ul>
+                        <li>Explain the difference between GET and POST requests</li>
+                        <li>What is REST API and how does it work?</li>
+                        <li>Describe the box model in CSS</li>
+                        <li>What are promises in JavaScript?</li>
+                        <li>Explain React components and their lifecycle</li>
+                    </ul>
+
+                    <h2>Preparing for HR Round</h2>
+                    <p>Don't underestimate the HR round. It's where your soft skills and cultural fit are evaluated.</p>
+
+                    <h3>Common HR Questions & How to Answer:</h3>
+                    
+                    <h4>1. "Tell me about yourself"</h4>
+                    <p><strong>How to answer:</strong> Use the Present-Past-Future formula. Talk about your current situation, relevant past experiences, and future aspirations. Keep it professional and concise (2-3 minutes).</p>
+
+                    <h4>2. "Why should we hire you?"</h4>
+                    <p><strong>How to answer:</strong> Highlight your unique combination of skills, enthusiasm, and cultural fit. Mention specific examples of projects or achievements that align with the job requirements.</p>
+
+                    <h4>3. "What are your strengths and weaknesses?"</h4>
+                    <p><strong>How to answer:</strong> For strengths, choose 2-3 relevant ones with examples. For weaknesses, mention a genuine one but explain how you're working to improve it.</p>
+
+                    <h4>4. "Where do you see yourself in 5 years?"</h4>
+                    <p><strong>How to answer:</strong> Show ambition while staying realistic. Mention skill development, taking on more responsibilities, and contributing to the company's growth.</p>
+
+                    <div class="highlight-box">
+                        <h4>Questions to Ask the Interviewer:</h4>
+                        <ul>
+                            <li>What does a typical day look like in this role?</li>
+                            <li>What are the biggest challenges facing the team?</li>
+                            <li>What technologies does the team currently use?</li>
+                            <li>What opportunities for growth and learning exist?</li>
+                            <li>What is the team structure and who would I be working with?</li>
+                        </ul>
+                    </div>
+
+                    <h2>Common Mistakes to Avoid</h2>
+                    
+                    <h3>1. Not Researching the Company</h3>
+                    <p>Always research the company's products, culture, recent news, and technology stack. This shows genuine interest and helps you ask informed questions.</p>
+
+                    <h3>2. Memorizing Code Without Understanding</h3>
+                    <p>Interviewers can easily spot memorized answers. Focus on understanding concepts so you can solve variations of problems.</p>
+
+                    <h3>3. Poor Communication</h3>
+                    <p>Even if you know the answer, poor communication can cost you the job. Practice explaining your thought process clearly and concisely.</p>
+
+                    <h3>4. Not Asking for Clarification</h3>
+                    <p>If you don't understand a question, ask for clarification. It's better than solving the wrong problem.</p>
+
+                    <h3>5. Arriving Unprepared</h3>
+                    <p>Always prepare: Resume copies, portfolio links, pen, notepad. For online interviews, test your technology beforehand.</p>
+
+                    <h2>Day Before Interview Checklist</h2>
+                    <ul>
+                        <li>✓ Review your resume and projects thoroughly</li>
+                        <li>✓ Research the company and interviewers (LinkedIn)</li>
+                        <li>✓ Practice common coding problems</li>
+                        <li>✓ Prepare your introduction and questions</li>
+                        <li>✓ Choose appropriate professional attire</li>
+                        <li>✓ Get adequate sleep (7-8 hours)</li>
+                        <li>✓ Plan your route and arrive 15 minutes early</li>
+                    </ul>
+
+                    <h2>During the Interview: Best Practices</h2>
+                    <ul>
+                        <li><strong>Think aloud:</strong> Explain your thought process while solving problems</li>
+                        <li><strong>Ask questions:</strong> Clarify doubts before jumping into solutions</li>
+                        <li><strong>Start simple:</strong> Begin with a brute force approach, then optimize</li>
+                        <li><strong>Test your code:</strong> Walk through your solution with test cases</li>
+                        <li><strong>Be honest:</strong> If you don't know something, admit it gracefully</li>
+                        <li><strong>Stay calm:</strong> Take a breath if you're stuck, it's okay to pause</li>
+                    </ul>
+
+                    <h2>Post-Interview Follow-up</h2>
+                    <p>Your job isn't done when the interview ends:</p>
+                    <ul>
+                        <li>Send a thank you email within 24 hours</li>
+                        <li>Mention specific discussion points from the interview</li>
+                        <li>Reiterate your interest in the position</li>
+                        <li>Follow up politely if you don't hear back in the given timeframe</li>
+                    </ul>
+
+                    <h2>How UB Institute Prepares You</h2>
+                    <p>At UB Institute & Training, we don't just teach technical skills - we prepare you for the entire interview process:</p>
+                    <ul>
+                        <li>Mock interviews with industry professionals</li>
+                        <li>Resume building and portfolio development</li>
+                        <li>Technical problem-solving sessions</li>
+                        <li>Soft skills and communication training</li>
+                        <li>HR round preparation</li>
+                        <li>Company-specific interview preparation</li>
+                    </ul>
+
+                    <h2>Conclusion</h2>
+                    <p>Cracking your first IT job interview requires a combination of technical knowledge, problem-solving skills, and effective communication. Start preparing early, practice consistently, and stay confident. Remember, every interview is a learning experience, even if you don't get the job.</p>
+
+                    <p>With the right preparation and mindset, you'll not only crack your first interview but also build a foundation for a successful IT career. Good luck!</p>
+                `,
+        },
+
+        "digital-marketing-career-guide": {
+          title:
+            "Digital Marketing Career Guide: From Beginner to Industry Expert",
+          category: "Digital Marketing",
+          date: "February 12, 2024",
+          readTime: "6 min read",
+          author: "UB Institute Team",
+          image:
+            "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1200",
+          excerpt:
+            "A complete guide on how digital marketing can transform your career, even if you come from a non-technical background.",
+          content: `
+        <p>Digital marketing is no longer an optional skill — it has become a necessity for every business. From small shops to multinational companies, everyone is investing in online growth.</p>
+
+        <h2>What is Digital Marketing?</h2>
+        <p>Digital marketing involves promoting products and services through online channels such as Google, social media, email, and websites.</p>
+
+        <h2>Why Digital Marketing is a Smart Career Choice</h2>
+        <ul>
+            <li>No engineering or coding degree required</li>
+            <li>High demand across industries</li>
+            <li>Freelancing and remote work opportunities</li>
+            <li>Performance-based salary growth</li>
+        </ul>
+
+        <h2>Skills You Learn at UB Institute</h2>
+        <ul>
+            <li>Search Engine Optimization (SEO)</li>
+            <li>Google Ads & Facebook Ads</li>
+            <li>Social Media Marketing</li>
+            <li>Content & Email Marketing</li>
+            <li>Analytics & Reporting</li>
+        </ul>
+
+        <h2>Career Opportunities</h2>
+        <p>After completing the course, students can work as Digital Marketing Executives, SEO Specialists, Social Media Managers, or Freelancers.</p>
+
+        <div class="quote-box">
+            "Digital marketing rewards skills, not degrees." – UB Institute Mentor
+        </div>
+
+        <h2>Conclusion</h2>
+        <p>If you want a future-proof career with continuous growth, digital marketing is one of the best options available today.</p>
+    `,
+        },
+
+        "computer-courses-job-ready": {
+          title: "Computer Courses That Make You Job-Ready in Today’s Market",
+          category: "Computer Courses",
+          date: "February 15, 2024",
+          readTime: "5 min read",
+          author: "UB Institute Team",
+          image:
+            "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200",
+          excerpt:
+            "Learn how job-oriented computer courses can help you secure employment faster.",
+          content: `
+        <p>Basic computer knowledge is essential in almost every job role today. However, employers look for practical skills, not just certificates.</p>
+
+        <h2>Why Computer Skills Matter</h2>
+        <ul>
+            <li>Office automation is everywhere</li>
+            <li>Data handling is a core requirement</li>
+            <li>Digital documentation is standard</li>
+        </ul>
+
+        <h2>Popular Computer Courses at UB Institute</h2>
+        <ul>
+            <li>Advanced MS Office</li>
+            <li>Computer Fundamentals</li>
+            <li>Internet & Email Operations</li>
+            <li>Office Automation</li>
+        </ul>
+
+        <h2>Who Should Join?</h2>
+        <p>These courses are ideal for students, job seekers, and working professionals who want to upgrade their skills.</p>
+
+        <div class="highlight-box">
+            <h4>Career Outcomes</h4>
+            <ul>
+                <li>Office Assistant</li>
+                <li>Data Entry Operator</li>
+                <li>Back Office Executive</li>
+            </ul>
+        </div>
+
+        <p><strong>Computer skills are no longer optional — they are mandatory.</strong></p>
+    `,
+        },
+
+        "vocational-training-career": {
+          title:
+            "Vocational Training: Skill-Based Education for Quick Employment",
+          category: "Vocational Training",
+          date: "February 18, 2024",
+          readTime: "5 min read",
+          author: "UB Institute Team",
+          image:
+            "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1200",
+          excerpt:
+            "Vocational training focuses on real skills that lead directly to jobs or self-employment.",
+          content: `
+        <p>Vocational training is designed for students who want to start earning early through skill-based education.</p>
+
+        <h2>What Makes Vocational Courses Special?</h2>
+        <ul>
+            <li>Short duration</li>
+            <li>Hands-on learning</li>
+            <li>Industry-focused skills</li>
+        </ul>
+
+        <h2>Courses Offered</h2>
+        <ul>
+            <li>Electrician Training</li>
+            <li>Office Assistant Course</li>
+            <li>Retail & Sales Training</li>
+        </ul>
+
+        <h2>Employment Opportunities</h2>
+        <p>Students can work in private companies, start their own business, or work as freelancers.</p>
+
+        <div class="quote-box">
+            "Skills give you independence." – UB Institute
+        </div>
+    `,
+        },
+
+        "web-development-career-path": {
+          title: "Web Development Career Path: Skills, Jobs & Growth",
+          category: "Web Development",
+          date: "February 22, 2024",
+          readTime: "6 min read",
+          author: "UB Institute Team",
+          image:
+            "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200",
+          excerpt:
+            "Web development is one of the most in-demand tech careers globally.",
+          content: `
+        <p>Every website, app, and online platform depends on web developers.</p>
+
+        <h2>Skills You Learn</h2>
+        <ul>
+            <li>HTML, CSS, JavaScript</li>
+            <li>Frontend & Backend Development</li>
+            <li>Responsive Design</li>
+        </ul>
+
+        <h2>Career Roles</h2>
+        <ul>
+            <li>Frontend Developer</li>
+            <li>Backend Developer</li>
+            <li>Full-Stack Developer</li>
+        </ul>
+
+        <p>Web development offers both job and freelancing opportunities worldwide.</p>
+    `,
+        },
+
+        "tally-gst-professional-career": {
+          title: "Tally with GST: A Must-Have Skill for Commerce Students",
+          category: "Tally with GST",
+          date: "February 26, 2024",
+          readTime: "5 min read",
+          author: "UB Institute Team",
+          image:
+            "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1200",
+          excerpt:
+            "Accounting and GST knowledge is essential for every business.",
+          content: `
+        <p>Tally with GST is one of the most practical accounting skills in India.</p>
+
+        <h2>Course Coverage</h2>
+        <ul>
+            <li>GST Returns Filing</li>
+            <li>Ledger & Inventory Management</li>
+            <li>Tax Calculation</li>
+        </ul>
+
+        <h2>Career Options</h2>
+        <ul>
+            <li>Account Executive</li>
+            <li>GST Assistant</li>
+            <li>Office Accountant</li>
+        </ul>
+
+        <p><strong>Every business needs a Tally professional.</strong></p>
+    `,
+        },
+
+        "graphic-design-creative-career": {
+          title: "Graphic Design Career: Turn Creativity into Income",
+          category: "Graphic Design",
+          date: "March 01, 2024",
+          readTime: "6 min read",
+          author: "UB Institute Team",
+          image:
+            "https://images.unsplash.com/photo-1545235617-9465d2a55698?w=1200",
+          excerpt:
+            "Graphic design is ideal for students who love creativity and visual communication.",
+          content: `
+        <p>Graphic designers play a crucial role in branding, marketing, and digital presence.</p>
+
+        <h2>Tools You Will Learn</h2>
+        <ul>
+            <li>Photoshop</li>
+            <li>Illustrator</li>
+            <li>Canva</li>
+        </ul>
+
+        <h2>Career Opportunities</h2>
+        <ul>
+            <li>Graphic Designer</li>
+            <li>Social Media Designer</li>
+            <li>Freelancer</li>
+        </ul>
+
+        <div class="quote-box">
+            "Design is creativity with purpose."
+        </div>
+    `,
+        },
+
+        "success-story-priya": {
+          title:
+            "Success Story: How Priya Built a Graphic Design Career from Zero",
+          category: "Success Story",
+          date: "March 05, 2024",
+          readTime: "5 min read",
+          author: "UB Institute Team",
+          image:
+            "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200",
+          excerpt:
+            "From a shy arts student to a confident graphic designer earning ₹50,000/month — Priya’s journey proves skills matter more than degrees.",
+          content: `
+        <p>Priya Singh was an arts graduate with a deep interest in creativity but no clear career direction. Coming from a small town, she believed creative jobs were only for big-city students.</p>
+
+        <h2>The Struggle Phase</h2>
+        <p>After graduation, Priya worked in a local shop earning ₹6,000 per month. She felt stuck and undervalued.</p>
+
+        <h2>The Turning Point</h2>
+        <p>In 2022, Priya joined UB Institute’s Graphic Design course after seeing student portfolios online.</p>
+
+        <h3>Skills She Learned</h3>
+        <ul>
+            <li>Photoshop & Illustrator</li>
+            <li>Social Media Creatives</li>
+            <li>Branding & Logo Design</li>
+            <li>Portfolio Development</li>
+        </ul>
+
+        <h2>Career Growth</h2>
+        <p>Within 6 months, Priya landed a junior designer role at a marketing agency.</p>
+
+        <div class="highlight-box">
+            <h4>Current Status</h4>
+            <ul>
+                <li>Monthly income: ₹50,000+</li>
+                <li>Freelance clients: 12+</li>
+                <li>Remote work</li>
+            </ul>
+        </div>
+
+        <div class="quote-box">
+            "UB Institute helped me believe in my creativity." – Priya Singh
+        </div>
+    `,
+        },
+
+        "success-story-amit-webdev": {
+          title:
+            "Success Story: Amit Became a Web Developer Without an Engineering Degree",
+          category: "Success Story",
+          date: "March 10, 2024",
+          readTime: "6 min read",
+          author: "UB Institute Team",
+          image:
+            "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200",
+          excerpt:
+            "Amit proves that passion and practice can beat degrees in the tech world.",
+          content: `
+        <p>Amit Kumar was a B.A. graduate who loved technology but felt locked out of the IT industry.</p>
+
+        <h2>Breaking the Myth</h2>
+        <p>Many told Amit that only engineers could become developers. He decided to prove them wrong.</p>
+
+        <h2>Learning at UB Institute</h2>
+        <ul>
+            <li>HTML, CSS, JavaScript</li>
+            <li>Responsive Web Design</li>
+            <li>Project-Based Learning</li>
+        </ul>
+
+        <h2>First Breakthrough</h2>
+        <p>After completing 3 live projects, Amit cracked a junior web developer role.</p>
+
+        <div class="highlight-box">
+            <h4>Today</h4>
+            <ul>
+                <li>Full-time Web Developer</li>
+                <li>Salary: ₹7.5 LPA</li>
+                <li>Freelance side income</li>
+            </ul>
+        </div>
+
+        <div class="quote-box">
+            "Skills speak louder than degrees." – Amit Kumar
+        </div>
+    `,
+        },
+
+        "success-story-neha-tally": {
+          title:
+            "Success Story: Neha Built a Stable Accounting Career with Tally & GST",
+          category: "Success Story",
+          date: "March 14, 2024",
+          readTime: "5 min read",
+          author: "UB Institute Team",
+          image:
+            "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1200",
+          excerpt:
+            "From commerce student to trusted accountant for 20+ businesses.",
+          content: `
+        <p>Neha Sharma was a commerce graduate but lacked practical accounting experience.</p>
+
+        <h2>Skill Gap</h2>
+        <p>Despite good marks, she struggled to get accounting jobs.</p>
+
+        <h2>Learning Tally with GST</h2>
+        <ul>
+            <li>GST Returns Filing</li>
+            <li>Ledger & Inventory</li>
+            <li>Real Business Accounting</li>
+        </ul>
+
+        <h2>Career Outcome</h2>
+        <p>Neha now manages accounts for multiple small businesses.</p>
+
+        <div class="highlight-box">
+            <ul>
+                <li>Monthly income: ₹45,000+</li>
+                <li>Freelance + job</li>
+            </ul>
+        </div>
+
+        <div class="quote-box">
+            "Accounting skills give long-term security." – Neha Sharma
+        </div>
+    `,
+        },
+
+        "success-story-rohit-dm": {
+          title:
+            "Success Story: Rohit Switched from Sales to Digital Marketing",
+          category: "Success Story",
+          date: "March 18, 2024",
+          readTime: "6 min read",
+          author: "UB Institute Team",
+          image:
+            "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1200",
+          excerpt: "A smart career switch that doubled Rohit’s income.",
+          content: `
+        <p>Rohit worked in field sales for 4 years with no growth.</p>
+
+        <h2>The Decision</h2>
+        <p>He wanted a desk job with skill-based growth.</p>
+
+        <h2>Digital Marketing Training</h2>
+        <ul>
+            <li>SEO & Google Ads</li>
+            <li>Live Campaigns</li>
+            <li>Analytics</li>
+        </ul>
+
+        <h2>Result</h2>
+        <p>Rohit now works as a performance marketer.</p>
+
+        <div class="highlight-box">
+            <ul>
+                <li>Salary doubled in 1 year</li>
+                <li>Remote work</li>
+            </ul>
+        </div>
+    `,
+        },
+
+        "success-story-sunita-computer": {
+          title:
+            "Success Story: Sunita Restarted Her Career with Computer Skills",
+          category: "Success Story",
+          date: "March 22, 2024",
+          readTime: "5 min read",
+          author: "UB Institute Team",
+          image:
+            "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=1200",
+          excerpt:
+            "A homemaker turned office professional through computer training.",
+          content: `
+        <p>After a long career break, Sunita wanted to re-enter the workforce.</p>
+
+        <h2>Challenge</h2>
+        <p>Lack of computer confidence.</p>
+
+        <h2>Training at UB Institute</h2>
+        <ul>
+            <li>MS Office</li>
+            <li>Email & Internet</li>
+            <li>Office Automation</li>
+        </ul>
+
+        <h2>Success</h2>
+        <p>Sunita now works as an office coordinator.</p>
+
+        <div class="quote-box">
+            "It’s never too late to learn." – Sunita
+        </div>
+    `,
+        },
+
+        "success-story-rahul": {
+          title: "Success Story: How Rahul Became a Manager in Just 3 Years",
+          category: "Success Story",
+          date: "January 05, 2024",
+          readTime: "4 min read",
+          author: "UB Institute Team",
+          image:
+            "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1200",
+          excerpt:
+            "Read the inspiring journey of our alumnus Rahul Kumar who started as a fresher and is now leading a team of 15 at a top MNC.",
+          content: `
+                    <p>Success stories inspire us to dream bigger and work harder. Today, we're sharing the remarkable journey of Rahul Kumar, a 2021 graduate of UB Institute & Training's Digital Marketing course, who rose from a fresher to a Marketing Manager in just three years.</p>
+
+                    <h2>The Beginning: A Struggling Graduate</h2>
+                    <p>In 2020, Rahul Kumar graduated with a B.Com degree from a local college in Dumka. Like many graduates, he faced a common dilemma: despite having a degree, he lacked the practical skills employers were looking for. After six months of unsuccessful job hunting, Rahul was frustrated and uncertain about his future.</p>
+
+                    <div class="quote-box">
+                        "I had a degree but no skills. Every company wanted experience, but how do you get experience without a job? That's when I decided to invest in skill development." - Rahul Kumar
+                    </div>
+
+                    <h2>The Turning Point: Joining UB Institute</h2>
+                    <p>In January 2021, Rahul enrolled in our Advanced Digital Marketing course. He was initially hesitant about the investment, but his desire to succeed outweighed his doubts.</p>
+
+                    <h3>What Made the Difference?</h3>
+                    <ul>
+                        <li><strong>Practical Training:</strong> Unlike his college education, every concept was backed by hands-on projects</li>
+                        <li><strong>Live Campaign Management:</strong> He managed real marketing campaigns during the course</li>
+                        <li><strong>Industry Mentorship:</strong> Direct guidance from working professionals</li>
+                        <li><strong>Portfolio Building:</strong> Created a strong portfolio showcasing his work</li>
+                    </ul>
+
+                    <h2>The Journey: From Fresher to Manager</h2>
+
+                    <h3>Year 1: Digital Marketing Executive (2021)</h3>
+                    <p>Through UB Institute's placement assistance, Rahul landed his first job as a Digital Marketing Executive at a growing e-commerce startup in Bangalore, with a salary of ₹3.5 LPA.</p>
+
+                    <div class="highlight-box">
+                        <h4>Key Achievements in Year 1:</h4>
+                        <ul>
+                            <li>Increased website traffic by 150% through SEO optimization</li>
+                            <li>Managed social media accounts with 200% follower growth</li>
+                            <li>Successfully ran 15+ Google Ads campaigns with 3.5x ROI</li>
+                            <li>Obtained Google Ads and Analytics certifications</li>
+                        </ul>
+                    </div>
+
+                    <h3>Year 2: Senior Marketing Executive (2022)</h3>
+                    <p>Rahul's dedication didn't go unnoticed. Within 14 months, he was promoted to Senior Marketing Executive with a 60% salary hike (₹5.6 LPA). He now led a small team of 2 marketing executives.</p>
+
+                    <p><strong>New responsibilities included:</strong></p>
+                    <ul>
+                        <li>Managing the complete digital marketing strategy</li>
+                        <li>Team leadership and training</li>
+                        <li>Budget management (₹15 lakhs monthly marketing budget)</li>
+                        <li>Client presentations and reporting</li>
+                    </ul>
+
+                    <div class="quote-box">
+                        "The skills I learned at UB Institute became my foundation. But continuous learning and applying those skills in real scenarios took my career to the next level." - Rahul Kumar
+                    </div>
+
+                    <h3>Year 3: Marketing Manager (2023-Present)</h3>
+                    <p>In October 2023, Rahul achieved what seemed impossible just three years ago - he became the Marketing Manager at a Series B funded fintech company in Pune, leading a team of 15 professionals with a package of ₹12 LPA.</p>
+
+                    <h2>The Secret Sauce: What Rahul Did Differently</h2>
+
+                    <h3>1. Never Stopped Learning</h3>
+                    <p>Rahul dedicated 2 hours daily to learning new skills:</p>
+                    <ul>
+                        <li>Completed 12 professional certifications</li>
+                        <li>Learned marketing automation tools</li>
+                        <li>Mastered data analytics and visualization</li>
+                        <li>Stayed updated with industry trends</li>
+                    </ul>
+
+                    <h3>2. Built a Strong Personal Brand</h3>
+                    <ul>
+                        <li>Maintained an active LinkedIn profile with 5000+ connections</li>
+                        <li>Published 50+ articles on digital marketing</li>
+                        <li>Spoke at 3 marketing conferences</li>
+                        <li>Created video content sharing marketing tips</li>
+                    </ul>
+
+                    <h3>3. Delivered Measurable Results</h3>
+                    <p>Rahul always focused on metrics:</p>
+                    <div class="highlight-box">
+                        <h4>Career Highlights:</h4>
+                        <ul>
+                            <li>Generated ₹2.5 Crore in revenue through digital campaigns</li>
+                            <li>Reduced customer acquisition cost by 45%</li>
+                            <li>Grew organic traffic from 10K to 200K monthly visitors</li>
+                            <li>Built email subscriber base from zero to 50,000</li>
+                            <li>Achieved 4.2x average ROI on paid campaigns</li>
+                        </ul>
+                    </div>
+
+                    <h3>4. Developed Leadership Skills</h3>
+                    <p>Understanding that technical skills alone won't make you a manager, Rahul invested in:</p>
+                    <ul>
+                        <li>Communication and presentation skills</li>
+                        <li>Team management and conflict resolution</li>
+                        <li>Strategic thinking and planning</li>
+                        <li>Emotional intelligence</li>
+                    </ul>
+
+                    <h2>Challenges Faced and Overcome</h2>
+
+                    <h3>Challenge 1: Imposter Syndrome</h3>
+                    <p>"Coming from a small town, I often felt I didn't belong in big corporate offices. But I reminded myself that skills matter more than background."</p>
+
+                    <h3>Challenge 2: Balancing Work and Learning</h3>
+                    <p>"Working full-time while learning new skills was tough. I created a strict schedule: 6-8 AM for learning, 9-7 PM work, 8-10 PM for personal projects."</p>
+
+                    <h3>Challenge 3: Managing People Older Than Him</h3>
+                    <p>"At 25, managing people older than me was initially uncomfortable. I learned to lead with empathy and competence, not just authority."</p>
+
+                    <h2>Rahul's Advice to Students</h2>
+
+                    <div class="highlight-box">
+                        <h4>Top 5 Tips:</h4>
+                        <ul>
+                            <li><strong>Invest in Skills, Not Just Degrees:</strong> "My B.Com degree got me nowhere. My digital marketing skills got me everywhere."</li>
+                            <li><strong>Build While Learning:</strong> "Don't wait to finish the course. Start implementing immediately."</li>
+                            <li><strong>Document Your Work:</strong> "Every project, every campaign - document it. Your portfolio is your best resume."</li>
+                            <li><strong>Network Actively:</strong> "70% of opportunities come from connections, not job portals."</li>
+                            <li><strong>Stay Humble, Stay Hungry:</strong> "Success is not a destination. I'm still learning every day."</li>
+                        </ul>
+                    </div>
+
+                    <h2>The Role of UB Institute</h2>
+                    <p>Rahul credits UB Institute for laying the foundation of his success:</p>
+                    
+                    <blockquote style="border-left: 4px solid var(--primary-color); padding-left: 20px; margin: 30px 0; font-style: italic; color: var(--text-light);">
+                        "UB Institute didn't just teach me digital marketing; they taught me how to think like a marketer. The practical approach, real projects, and mentorship from industry experts prepared me for the real world. The placement assistance helped me land my first job, but the skills they taught me helped me grow from there."
+                    </blockquote>
+
+                    <h2>Where is Rahul Now?</h2>
+                    <p>Today, Rahul leads the marketing department at a fast-growing fintech startup. His team has grown the company's user base from 50,000 to 500,000 in just 6 months. He's also mentoring 10+ students from UB Institute, giving back to the community that helped him start.</p>
+
+                    <h3>Future Plans:</h3>
+                    <ul>
+                        <li>Aiming for a VP Marketing role in the next 2 years</li>
+                        <li>Planning to start a marketing consultancy</li>
+                        <li>Creating an online course to help freshers like he once was</li>
+                        <li>Speaking at national marketing conferences</li>
+                    </ul>
+
+                    <h2>The Bigger Picture</h2>
+                    <p>Rahul's story is not just about career growth - it's about transformation. From a confused graduate in a small town to a confident marketing leader in a metro city, his journey proves that with the right skills, determination, and continuous learning, anything is possible.</p>
+
+                    <div class="quote-box">
+                        "Don't let your background define your future. Let your determination and skills write your success story." - Rahul Kumar
+                    </div>
+
+                    <h2>Your Success Story Starts Here</h2>
+                    <p>Rahul's journey is just one of many success stories from UB Institute & Training. We've helped hundreds of students transform their careers through practical, industry-relevant training and placement assistance.</p>
+
+                    <p>If Rahul could do it, so can you. The only question is: Are you ready to take the first step?</p>
+
+                    <p><strong>Join UB Institute & Training today and write your own success story!</strong></p>
+                `,
+        },
+      };
+
+      // Get blog ID from URL
+      const urlParams = new URLSearchParams(window.location.search);
+      let blogId = urlParams.get("id");
+
+      // FIX: Default to the first blog post if no ID is found in the URL.
+      // This prevents the "Blog not found" error when opening the file directly.
+      if (!blogId) {
+        blogId = Object.keys(blogPosts)[0];
+      }
+
+      // Load blog content
+      function loadBlogContent() {
+        const blog = blogPosts[blogId];
+
+        if (!blog) {
+          document.getElementById("blogContent").innerHTML =
+            '<p style="text-align: center; padding: 50px;">Blog post not found.</p>';
+          return;
+        }
+
+        // Update page title
+        document.title = blog.title + " - UB Institute & Training";
+
+        const content = `
+                <div class="blog-detail-header">
+                    <img src="${blog.image}" alt="${blog.title}">
+                    <div class="blog-detail-overlay">
+                        <span class="blog-category-badge">${blog.category}</span>
+                        <h1 class="blog-detail-title">${blog.title}</h1>
+                        <div class="blog-detail-meta">
+                            <span class="meta-item">
+                                <i class='bx bx-calendar'></i> ${blog.date}
+                            </span>
+                            <span class="meta-item">
+                                <i class='bx bx-time-five'></i> ${blog.readTime}
+                            </span>
+                            <span class="meta-item">
+                                <i class='bx bx-user'></i> ${blog.author}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="blog-detail-content">
+                    ${blog.content}
+
+                    <div class="author-box">
+                        <div class="author-avatar">UB</div>
+                        <div class="author-info">
+                            <h4>${blog.author}</h4>
+                            <p>Expert trainers at UB Institute & Training, dedicated to helping students achieve their career goals through quality education and practical training.</p>
+                        </div>
+                    </div>
+
+                    <div class="share-section">
+                        <h3>Share This Article</h3>
+                        <div class="share-buttons">
+                            <a href="https://www.facebook.com/sharer/sharer.php?u=${window.location.href}" target="_blank" class="share-btn facebook">
+                                <i class='bx bxl-facebook'></i> Facebook
+                            </a>
+                            <a href="https://twitter.com/intent/tweet?url=${window.location.href}&text=${blog.title}" target="_blank" class="share-btn twitter">
+                                <i class='bx bxl-twitter'></i> Twitter
+                            </a>
+                            <a href="https://wa.me/?text=${blog.title} ${window.location.href}" target="_blank" class="share-btn whatsapp">
+                                <i class='bx bxl-whatsapp'></i> WhatsApp
+                            </a>
+                            <a href="https://www.linkedin.com/sharing/share-offsite/?url=${window.location.href}" target="_blank" class="share-btn linkedin">
+                                <i class='bx bxl-linkedin'></i> LinkedIn
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+        document.getElementById("blogContent").innerHTML = content;
+        loadRelatedPosts(blogId);
+      }
+
+      // Load related posts
+      function loadRelatedPosts(currentBlogId) {
+        const relatedPostsHtml = Object.keys(blogPosts)
+          .filter((id) => id !== currentBlogId)
+          .map((id) => {
+            const post = blogPosts[id];
+            return `
+                        <div class="related-card">
+                            <img src="${post.image}" alt="${post.title}">
+                            <div class="related-card-content">
+                                <h3>${post.title}</h3>
+                                <p>${post.excerpt}</p>
+                                <a href="blog-detail.html?id=${id}">
+                                    Read More <i class='bx bx-right-arrow-alt'></i>
+                                </a>
+                            </div>
+                        </div>
+                    `;
+          })
+          .join("");
+
+        document.getElementById("relatedPosts").innerHTML = relatedPostsHtml;
+      }
+
+      // Load content when page loads
+      loadBlogContent();
+
+      // Update current year
+      document.getElementById("currentYear").textContent =
+        new Date().getFullYear();
+    </script>
+  </body>
+</html>

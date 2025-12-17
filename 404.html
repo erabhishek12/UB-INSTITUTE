@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found | UB Institute & Training</title>
+    <link rel="icon" type="image/png" href="image\logo-wb.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+    <div class="error-page">
+        <div class="error-content">
+            <div class="error-illustration">
+                <span class="error-code">4</span>
+                <div class="error-circle">
+                    <i class='bx bxs-graduation'></i>
+                </div>
+                <span class="error-code">4</span>
+            </div>
+            
+            <h1>Oops! Page Not Found</h1>
+            <p>The page you're looking for doesn't exist or has been moved.<br>Let's get you back on track!</p>
+            
+            <div class="error-search">
+                <form action="courses.html" method="get">
+                    <input type="text" name="search" placeholder="Search for courses...">
+                    <button type="submit"><i class='bx bx-search'></i></button>
+                </form>
+            </div>
+            
+            <div class="error-links">
+                <h4>Quick Links:</h4>
+                <div class="links-grid">
+                    <a href="index.html"><i class='bx bxs-home'></i> Home</a>
+                    <a href="courses.html"><i class='bx bxs-book-open'></i> Courses</a>
+                    <a href="about.html"><i class='bx bxs-info-circle'></i> About Us</a>
+                    <a href="gallery.html"><i class='bx bxs-phone'></i>Gallery</a>
+                    <a href="contact.html"><i class='bx bxs-phone'></i> Contact</a>
+                    <a href="support.html"><i class='bx bxs-phone'></i> support</a>
+                    
+                </div>
+            </div>
+            
+            <a href="index.html" class="btn btn-primary btn-lg">
+                <i class='bx bx-home'></i> Back to Home
+            </a>
+            
+            <div class="error-contact">
+                <p>Need help? Call us at <a href="tel:+916205119312">+91 6205 119 312</a></p>
+            </div>
+        </div>
+        
+        <!-- Floating Shapes -->
+        <div class="floating-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
+    </div>
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; }
+        
+        .error-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #1E3A8A 0%, #3B82F6 100%);
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .error-content {
+            text-align: center;
+            max-width: 600px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .error-illustration {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .error-code {
+            font-family: 'Poppins', sans-serif;
+            font-size: 8rem;
+            font-weight: 800;
+            color: rgba(255,255,255,0.9);
+            text-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            line-height: 1;
+        }
+        
+        .error-circle {
+            width: 120px;
+            height: 120px;
+            background: #F97316;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: bounce 2s ease-in-out infinite;
+        }
+        
+        .error-circle i {
+            font-size: 3.5rem;
+            color: #fff;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .error-content h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+        
+        .error-content > p {
+            color: rgba(255,255,255,0.85);
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+        
+        .error-search {
+            max-width: 400px;
+            margin: 0 auto 2rem;
+        }
+        
+        .error-search form {
+            display: flex;
+            background: #fff;
+            border-radius: 3rem;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+        
+        .error-search input {
+            flex: 1;
+            padding: 1rem 1.5rem;
+            border: none;
+            font-size: 1rem;
+            outline: none;
+        }
+        
+        .error-search button {
+            background: #F97316;
+            border: none;
+            padding: 0 1.5rem;
+            color: #fff;
+            font-size: 1.3rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .error-search button:hover { background: #EA580C; }
+        
+        .error-links {
+            margin-bottom: 2rem;
+        }
+        
+        .error-links h4 {
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .links-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.75rem;
+        }
+        
+        .links-grid a {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.25rem;
+            background: rgba(255,255,255,0.15);
+            color: #fff;
+            border-radius: 2rem;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        
+        .links-grid a:hover {
+            background: #fff;
+            color: #1E3A8A;
+            transform: translateY(-3px);
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            background: #fff;
+            color: #1E3A8A;
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .btn:hover {
+            background: #F97316;
+            color: #fff;
+            transform: translateY(-3px);
+        }
+        
+        .error-contact {
+            margin-top: 2rem;
+        }
+        
+        .error-contact p {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9rem;
+        }
+        
+        .error-contact a {
+            color: #F97316;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        
+        /* Floating Shapes */
+        .floating-shapes .shape {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+        }
+        
+        .shape-1 { width: 400px; height: 400px; top: -150px; right: -100px; }
+        .shape-2 { width: 300px; height: 300px; bottom: -100px; left: -100px; }
+        .shape-3 { width: 150px; height: 150px; top: 40%; left: 10%; animation: float 6s ease-in-out infinite; }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-30px); }
+        }
+        
+        @media (max-width: 575px) {
+            .error-code { font-size: 5rem; }
+            .error-circle { width: 80px; height: 80px; }
+            .error-circle i { font-size: 2.5rem; }
+            .error-content h1 { font-size: 1.75rem; }
+            .error-content > p { font-size: 1rem; }
+            .links-grid a { padding: 0.6rem 1rem; font-size: 0.85rem; }
+        }
+    </style>
+</body>
+
+</html>
