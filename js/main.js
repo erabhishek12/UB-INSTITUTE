@@ -1621,7 +1621,7 @@ function proceedWithDownload() {
     
     // For demo, just open placeholder
     // In production, this would download the actual PDF
-    window.open('https://via.placeholder.com/800x1200/1E3A8A/FFFFFF?text=UB+Institute+Brochure+PDF', '_blank');
+    window.open('https://drive.google.com/file/d/1eC5n6pDM2CFJ3we-YBBLT7009ou-xGvq/view?usp=sharing', '_blank');
     
     // document.body.appendChild(link);
     // link.click();
